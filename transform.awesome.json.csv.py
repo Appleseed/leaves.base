@@ -27,66 +27,63 @@ else:
     output_file = sys.argv[2]
 
 with open(input_file) as f:
-    data = json.load(f)
+    json_data = json.load(f)
 
-output_line = ''
-site_url = ''
-for title in data:
-    title_content = title.split("[",1)[0]
-    for subTitle in data[title]:
-        if subTitle[0] == '[':
-            site_url = re.findall(r'\((http.*?)\)', subTitle)
-            if site_url != []:
-                output_line = output_line + " ".join(site_url) + ',' + '"' + title_content + '"' + "\n"
-#                output_line = output_line + " ".join(site_url) + ',' + '"' + title + '"' + "\n"
+def obj_rec(obj, t, flag=0,acc=''):
+    v_obj = type(obj)
+    if type(obj) not in [dict, list, map]:
+        ref_url = re.findall(r'\((http.*?)\)', obj)
+        if ref_url :
+            url = ref_url[len(ref_url)-1].strip('[]')
         else:
-            l = data[title][subTitle]
-            if (type(data[title][subTitle]) is list) or (type(data[title][subTitle]) is dict):
-                for subsubTitle in data[title][subTitle]:
-                    if type(subsubTitle) is list:
-                        for subsubdetails in subsubTitle:
-                            site_url = re.findall(r'\((http.*?)\)', subsubdetails)
-                            if len(site_url) > 0:
-                                output_line = output_line + site_url[0].strip('[]') + ',' + '"' + title_content + ',' + subTitle + ',' + '"' + "\n"
-    #                            output_line = output_line + site_url[0].strip('[]') + ',' + '"' + title + ',' + subTitle + ',' + '"' + "\n"
-                            else:
-                                tempvar2 = re.findall(r'\[.*?\]',subsubdetails)[0].strip('[]')
-                                output_line = output_line + tempvar2 + ',' + '"' + title_content + ',' + subTitle + ',' + tempvar1 + '"' + "\n"
-    #                            output_line = output_line + ',' + '"' + title + ',' + subTitle + ',' + '"' + "\n"
-                    elif subsubTitle[0] == '[':
-                        site_url = re.findall(r'\((http.*?)\)', subsubTitle)
-                        if site_url != []:
-                            ref_url = site_url[len(site_url)-1]
-                            output_line = output_line + ref_url + ',' + '"' + title_content + ',' + subTitle + '"' + "\n"
-    #                        output_line = output_line + " ".join(site_url) + ',' + '"' + title + ',' + subTitle + '"' + "\n"
-                        else:
-                            tempvar1 = re.findall(r'\[.*?\]',subsubTitle)[0].strip('[]')
-                            output_line = output_line + tempvar1 + ',' + '"' + title_content + ',' + subTitle + ',' + '"' + "\n"
-                    else:
-                        err = 0
-                        try:
-                            l = data[title][subTitle][subsubTitle]
-                        except TypeError:
-                            err = 1
+            url = ''
 
-                        if err == 0:
-                            for details in data[title][subTitle][subsubTitle]:
-                                site_url = re.findall(r'\((http.*?)\)', details)
-                                if site_url != []:
-                                    output_line = output_line + " ".join(site_url) + ',' + '"' + title_content + ',' + subTitle + ',' + subsubTitle + '"' + "\n"
-    #                               output_line = output_line + " ".join(site_url) + ',' + '"' + title + ',' + subTitle + ',' + subsubTitle + '"' + "\n"
-                        else:
-                            l = re.findall(r'\[.*?\]',subsubTitle)[0].strip('[]')
-                            ref_url = re.findall(r'\((http.*?)\)', subsubTitle)[0].strip('[]')
-                            output_line = output_line + ref_url + ',' + '"' + title_content + ',' + subTitle + ',' + l + '"' + "\n"
+        if acc:
+            if flag == 0:
+                return acc + '\n'
             else:
-                ref_url = re.findall(r'\((http.*?)\)', l)
-                if ref_url != []:
-                    output_line = output_line + ref_url[len(ref_url)-1].strip('[]') + ',' + '"' + title_content + ',' + subTitle + '"' + "\n"
+                return acc + url + ',' + '"' + t + '",'  + '\n'
+        else:
+            if flag == 0:
+                return ',,"' + url +',' + t + '"'  + '\n'
+            else:
+                return ',' + url + ',' + '"' + t + '",'  + '\n'
+    elif v_obj == list:
+            if obj :
+                return obj_rec(obj[1:], t, flag, obj_rec(obj[0], t , 1, acc))
+            else:
+                return acc
+    elif v_obj == dict:
+        if bool(obj):
+            for o in obj:
+                k = o
+                oo = obj[o]
+                if type(oo) in [list,dict]:
+                    r = obj_rec(oo, t + ',' + o, 1, acc)
+                    acc = ""
                 else:
-                    output_line = output_line + ',' + '"' + title_content + ',' + subTitle + '"' + "\n"
+                    ref_url = re.findall(r'\((http.*?)\)', oo)
+                    if ref_url:
+                        url = ref_url[len(ref_url) - 1].strip('[]')
+                    else:
+                        url = ''
+                    if not acc:
+                        sep = ','
+                    else:
+                        sep = ''
+                    r = sep + url + ',' + '"' + t + ',' + k + '",\n'
+                break
+            del obj[k]
+            if not obj:
+                sep = '\n'
+            else:
+                sep = ''
+            return obj_rec(obj, t, flag, acc + r + sep)
+        else:
+            return acc[:-1]
+itemlist = []
+for o in json_data:
+    itemlist.append((obj_rec(json_data[o], o.split("(",1)[0])[1:]))
 
-#print output_line
-with open(output_file, 'w') as o:
-     o.write(output_line)
-
+with open(output_file, 'w') as outfile:
+    outfile.writelines(["%s\n" % item  for item in itemlist])
