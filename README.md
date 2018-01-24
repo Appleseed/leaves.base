@@ -2,7 +2,7 @@
 Utilities to download and transform "awesome" lists into usable JSON or CSV files for ingestion into other systems. 
 
 #For Windows
-##step 1: 
+##	step 1: 
 ###	pip install markdown-to-json
 ##step 2: 
 ###	include below line to md_to_json script under Lib\site-packages\markdown_to_json\scripts
