@@ -1,5 +1,6 @@
 import sys
 import os
+import platform
 import tomd
 from tomd import Tomd
 from HTMLParser import HTMLParser
@@ -42,4 +43,7 @@ if not only_md :
         w.write(tomd.Tomd(td.get_text()).markdown)
         w.write(p2.read())
 else:
-    os.system("mv %s %s"%(d_file,final_file))
+    if platform.system() != 'Windows':
+	os.system("mv %s %s"%(d_file,final_file))
+    else:
+	os.system("rename %s %s"%(d_file,final_file))
