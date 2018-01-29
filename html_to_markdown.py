@@ -42,4 +42,4 @@ if not only_md :
         w.write(tomd.Tomd(td.get_text()).markdown)
         w.write(p2.read())
 else:
-    os.system("rename %s %s"%(d_file,final_file))
+    os.system("mv %s %s"%(d_file,final_file))
