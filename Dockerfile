@@ -16,14 +16,11 @@ WORKDIR /awesome_transform
 # Copy the current directory contents into the container at /app
 ADD . /awesome_transform
 
-RUN chmod 777 /awesome_transform
-
 # Install any needed packages specified in requirements.txt
 RUN pip install markdown-to-json
 
 #COPY md_to_json /usr/local/bin/md_to_json
 
-RUN chmod 777 /usr/local/bin/
-
 ENTRYPOINT ["python", "collect.awesome.md.csvpy.py"]
 CMD ["https://raw.githubusercontent.com/Anant/awesome-sitecore/master/README.md","awesome_sitecore"]
+
