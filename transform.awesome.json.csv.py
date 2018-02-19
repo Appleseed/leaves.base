@@ -1,3 +1,4 @@
+# coding: utf-8
 import sys
 import json
 import re
@@ -31,23 +32,33 @@ with open(input_file) as f:
 
 def obj_rec(obj, t, flag=0,acc=''):
     v_obj = type(obj)
+    r = ''
     if type(obj) not in [dict, list, map]:
         ref_url = re.findall(r'\((http.*?)\)', obj)
+        ref_title = re.findall(r'\[[^\[\]]*\]', obj)
         if ref_url :
             url = ref_url[len(ref_url)-1].strip('[]')
+            title = ref_title[len(ref_title)-1].strip('[]')
+            url_title = title + ',' + url
         else:
             url = ''
+            title = ''
+            url_title = title + ',' + url
+            return acc
 
         if acc:
             if flag == 0:
                 return acc + '\n'
             else:
-                return acc + url + ',' + '"' + t + '",'  + '\n'
+#                return acc + url + ',' + '"' + t + '"'  + '\n'
+                return acc + url_title + ',' + '"' + t + '"'  + '\n'
         else:
             if flag == 0:
-                return ',,"' + url +',' + t + '"'  + '\n'
+#                return ',,"' + url +',' + t + '"'  + '\n'
+                return ',,"' + url_title + ',' + t + '"' + '\n'
             else:
-                return ',' + url + ',' + '"' + t + '",'  + '\n'
+#                return ',' + url + ',' + '"' + t + '"'  + '\n'
+                return ',' + url_title + ',' + '"' + t + '"'  + '\n'
     elif v_obj == list:
             if obj :
                 return obj_rec(obj[1:], t, flag, obj_rec(obj[0], t , 1, acc))
@@ -63,15 +74,22 @@ def obj_rec(obj, t, flag=0,acc=''):
                     acc = ""
                 else:
                     ref_url = re.findall(r'\((http.*?)\)', oo)
+                    ref_title = re.findall(r'\[[^\[\]]*\]', oo)
                     if ref_url:
                         url = ref_url[len(ref_url) - 1].strip('[]')
+                        title = ref_title[len(ref_title)-1].strip('[]')
+                        url_title = title + ',' + url
                     else:
                         url = ''
+                        title = ''
+                        url_title = title + ',' + url
                     if not acc:
                         sep = ','
                     else:
                         sep = ''
-                    r = sep + url + ',' + '"' + t + ',' + k + '",\n'
+                    if not url:
+#                        r = sep + url + ',' + '"' + t + ',' + k + '",\n'
+                        r = sep + url_title + ',' + '"' + t + ',' + k + '",\n'
                 break
             del obj[k]
             if not obj:

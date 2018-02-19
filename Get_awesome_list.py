@@ -1,8 +1,9 @@
+# coding: utf-8
 import sys
 import csv
 
 with open(sys.argv[2], "w") as writer:
-    with open(sys.argv[1], "rb") as f:
+    with open(sys.argv[1], "r") as f:
         r = csv.reader(f)
         for row in r:
             for col in row:

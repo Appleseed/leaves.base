@@ -3,7 +3,7 @@ import os
 import platform
 import tomd
 from tomd import Tomd
-from HTMLParser import HTMLParser
+from html.parser import HTMLParser
 import Split_html_markdown
 
 class TagDropper(HTMLParser):
@@ -40,10 +40,16 @@ if not only_md :
 
     with open(final_file, 'w') as w, \
             open(md_file, 'r') as p2:
-        w.write(tomd.Tomd(td.get_text()).markdown)
+        w.write((tomd.Tomd(td.get_text()).markdown).replace("# ","# "+file1).strip())
         w.write(p2.read())
 else:
+    with open(final_file, 'wb') as w, \
+            open(d_file, 'rb') as p2:
+        for line in p2:
+            w.write(line.decode('ascii', errors='ignore').replace('\0', '').encode('utf-8'))
+    """
     if platform.system() != 'Windows':
-	os.system("mv %s %s"%(d_file,final_file))
+	    os.system("mv %s %s"%(d_file,final_file))
     else:
-	os.system("rename %s %s"%(d_file,final_file))
+	    os.system("rename %s %s"%(d_file,final_file))
+    """
