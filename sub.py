@@ -1,10 +1,10 @@
-# coding: utf-8
 import redis
 import threading
 import time
-import json
 import aiohttp
 import asyncio
+import json
+import csv
 from wallabag_api.wallabag import Wallabag
 
 param = json
@@ -16,7 +16,11 @@ client_id = ""
 client_secret = ""
 extension = ""
 
-async def wallabagAPI(p_title, p_url, p_tags):
+title = ""
+url = ""
+tags = ""
+
+async def wallabagAPI(loop):
     params = {'username': username,
               'password': password,
               'client_id': client_id,
@@ -32,9 +36,11 @@ async def wallabagAPI(p_title, p_url, p_tags):
         return data
 
     async def create_entry(title, url, tags):
+        print('Title ', title, ' url ', url, ' tags ', tags)
         data = await pr_post_entries(title, url, tags)
 
-    async with aiohttp.ClientSession() as session:
+
+    async with aiohttp.ClientSession(loop=loop) as session:
         wall = Wallabag(host=my_host,
                         client_secret=params.get('client_secret'),
                         client_id=params.get('client_id'),
@@ -42,43 +48,55 @@ async def wallabagAPI(p_title, p_url, p_tags):
                         extension=params['extension'],
                         aio_sess=session)
 
-        await create_entry(p_title, p_url, p_tags)
+        await create_entry(title, url, tags)
+
+def callWallabag(p_title, p_url, p_tags):
+    param = json.load(open('wallabag_param'))
+
+    global my_host
+    global username
+    global password
+    global client_id
+    global client_secret
+    global extension
+
+    my_host = param["host"]
+    username = param["username"]
+    password = param["password"]
+    client_id = param["client_id"]
+    client_secret = param["client_secret"]
+    extension = param["extension"]
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(wallabagAPI(loop))
+#    wallabagAPI()
 
 def callback():
-        r = redis.client.StrictRedis(host='redis')
-        sub = r.pubsub()
-        sub.subscribe('clock')
-        while True:
-                for m in sub.listen():
-                        print ('received: {0}'.format(m['data']))
+    global title
+    global url
+    global tags
+    r = redis.client.StrictRedis(host='redis', decode_responses=True)
+    sub = r.pubsub()
+    sub.subscribe('clock')
+    while True:
+        for m in sub.listen():
+            title = ''
+            url = ''
+            tags = ''
+            if m['data'] != 1:
+                csv_str = csv.reader(m['data'][1:-1], quotechar="'", delimiter=",")
+                for val in csv_str:
+                   if val[0].strip():
+                    if not title.strip():
+                       title = val[0]
+                    elif not url.strip():
+                       url = val[0]
+                    elif not tags.strip():
+                       tags = val[0]
+                callWallabag(title, url, tags)
 
 def main():
-        global title
-        global url
-        global tags
-
-        param = json.load(open('wallabag_param'))
-
-        global my_host
-        global username
-        global password
-        global client_id
-        global client_secret
-        global extension
-
-        my_host = param["host"]
-        username = param["username"]
-        password = param["password"]
-        client_id = param["client_id"]
-        client_secret = param["client_secret"]
-        extension = param["extension"]
-
-        t = threading.Thread(target=callback)
-        t.setDaemon(True)
-        t.start()
-        while True:
-                print ('Waiting')
-                time.sleep(30)
+     callback()
 
 if __name__ == '__main__':
-        main()
+    main()

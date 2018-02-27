@@ -16,6 +16,7 @@ extension = ""
 title = ""
 url = ""
 tags = ""
+ref_flag = 0
 
 async def wallabagAPI(loop):
     params = {'username': username,
@@ -43,6 +44,14 @@ async def wallabagAPI(loop):
     async def entry_tags(tags):
         data = await pr_post_entry_tags(tags)
 
+    def pr_get_entry():
+        data = wall.get_entry(entry=1)
+        return data
+
+
+    async def get_entry():
+        data = await pr_get_entry
+
     async with aiohttp.ClientSession(loop=loop) as session:
         wall = Wallabag(host=my_host,
                         client_secret=params.get('client_secret'),
@@ -50,18 +59,45 @@ async def wallabagAPI(loop):
                         token=token,
                         extension=params['extension'],
                         aio_sess=session)
+        if ref_flag == 0:
+            await get_entry()
+        elif ref_flag == 1:
+            await create_entry(title, url, tags)
 
-        await create_entry(title, url, tags)
-
-def callWallabag(p_title, p_url, p_tags):
+def createEntryWallabag(p_title, p_url, p_tags):
     global title
     global url
     global tags
+    global ref_flag
 
     title = p_title
     url = p_url
     tags = p_tags
+    ref_flag = 1
 
+    param = json.load(open('wallabag_param'))
+
+    global my_host
+    global username
+    global password
+    global client_id
+    global client_secret
+    global extension
+
+    my_host = param["host"]
+    username = param["username"]
+    password = param["password"]
+    client_id = param["client_id"]
+    client_secret = param["client_secret"]
+    extension = param["extension"]
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(wallabagAPI(loop))
+
+
+def GetEntriesWallabag():
+    global ref_flag
+    ref_flag = 0
     param = json.load(open('wallabag_param'))
 
     global my_host
