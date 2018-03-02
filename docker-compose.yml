@@ -1,0 +1,58 @@
+#######################################
+#  Appleseed.Leaves.App
+#######################################
+version: '2'
+services:
+  wallabag:
+    image: wallabag/wallabag
+    environment:
+      - MYSQL_ROOT_PASSWORD=wallaroot
+      - SYMFONY__ENV__DATABASE_DRIVER=pdo_mysql
+      - SYMFONY__ENV__DATABASE_HOST=db
+      - SYMFONY__ENV__DATABASE_PORT=3306
+      - SYMFONY__ENV__DATABASE_NAME=wallabag
+      - SYMFONY__ENV__DATABASE_USER=wallabag
+      - SYMFONY__ENV__DATABASE_PASSWORD=wallapass
+      - SYMFONY__ENV__MAILER_HOST=127.0.0.1
+      - SYMFONY__ENV__MAILER_USER=~
+      - SYMFONY__ENV__MAILER_PASSWORD=~
+      - SYMFONY__ENV__FROM_EMAIL=rahul.singh@anant.us
+      - SYMFONY__ENV__DOMAIN_NAME=http://192.168.99.100
+      - SYMFONY__ENV__DATABASE_CHARSET=utf8mb4
+    ports:
+      - 80:80
+    volumes:
+      - C:\Users\DELL\Docker_proj\wallabag\wallabag_images:/var/www/wallabag/web/assets/images
+  db:
+    image: mariadb
+    command: 
+      --character_set_client=utf8 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --character-set-client-handshake=FALSE
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=wallaroot
+    volumes:
+      - /home/azureuser/data/mysql:/var/lib/mysql
+  redis:
+    image: redis:alpine
+
+
+  awesome_transform:
+    image: jagannathbilgi/awesome-transform
+    environment:
+      - REDIS_IP={{redis|container_ip}}
+      - CASS_IP={{cassandra:9042}}
+
+    ports:
+      - 5000:5000
+
+  cassandra:
+    image: cassandra:latest
+    volumes:
+      - c:\Users\DELL\Docker_proj\wallabag\cassandra-persistence:/var/lib/cassandra
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db:db
+    ports:
+      - 83:80
