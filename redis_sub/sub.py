@@ -9,7 +9,7 @@ from wallabag_api.wallabag import Wallabag
 from cassandra.cluster import Cluster
 from cassandra.cqlengine import connection
 from cassandra.cqlengine.management import sync_table
-from Testcass.testcass import Entry
+from CassStruct.cassStruct import Entry, Tags, Published_by
 from datetime import datetime
 
 param = json
@@ -46,19 +46,57 @@ async def wallabagAPI(loop):
         try:
            crt_at = datetime.strptime(data["created_at"], "%Y-%m-%dT%H:%M:%S+%f")
            upd_at = datetime.strptime(data["updated_at"], "%Y-%m-%dT%H:%M:%S+%f")
-           published_by = ','.join(data["published_by"])
+           if data["published_at"]:
+               upd_at = datetime.strptime(data["published_at"], "%Y-%m-%dT%H:%M:%S+%f")
+           else:
+               upd_at = None
 
+           if data["starred_at"]:
+               strd_at = datetime.strptime(data["starred_at"], "%Y-%m-%dT%H:%M:%S+%f")
+           else:
+               strd_at = None
+
+           if type(data["published_by"]) == list :
+               published_by = ''.join(data["published_by"])
+           else:
+               published_by = data["published_by"]
+
+           tag_flag = 0
+           publishers_flag = 0
            entry = Entry.create(id=data["id"], user_name = data["user_name"], title=data["title"], url=data["url"],is_archived=data["is_archived"],
                                 is_starred = data["is_starred"], content = data["content"], create_at = crt_at,
                                 update_at = upd_at, mimetype = data["mimetype"], language = data["language"],
                                 reading_time = data["reading_time"], domain_name = data["domain_name"],
                                 preview_picture = data["preview_picture"], uid = data["uid"],
-                                http_status = data["http_status"], published_at = data["published_at"],
+                                http_status = data["http_status"], published_at = upd_at,
                                 published_by = published_by, headers = data["headers"],
-                                starred_at = data["starred_at"], origin_url = data["origin_url"] )
+                                starred_at = strd_at, origin_url = data["origin_url"] )
+           if data["tags"]:
+                for row in data["tags"]:
+                    if len(row["label"]) != 0:
+                        tag_flag = 1
+                        tags = Tags.create(tag= row["label"], slug = row["slug"], id= data["id"], url=data["url"])
+           if data["published_by"]:
+                for row in data["published_by"]:
+                    if len(row) != 0 :
+                        publishers_flag = 1
+                        publishers = Published_by.create(publisher = row, title=data["title"], id = data["id"], url=data["url"])
+
+           if tag_flag == 1:
+                tags.save()
+           if publishers_flag == 1:
+                publishers.save()
            entry.save()
         except Exception as e:
-            print("Failed while creating entry in Cassandra " + str(e))
+            print("Failed while creating entry in Cassandra ", url, str(e))
+            print("id", type(data["id"]), data["id"])
+            print("created_at", type(data["created_at"]), data["created_at"])
+            print("update_at", type(data["updated_at"]), data["updated_at"])
+            print("published_at", type(data["published_at"]), data["published_at"])
+            print("is_archived", type(data["is_archived"]),data["is_archived"])
+            print("is_starred",type(data["is_starred"]), data["is_starred"])
+            print("reading_time", type( data["reading_time"]),  data["reading_time"])
+            print("starred_at", type(data["starred_at"]), data["starred_at"])
 
     async with aiohttp.ClientSession(loop=loop) as session:
         wall = Wallabag(host=my_host,
@@ -69,7 +107,8 @@ async def wallabagAPI(loop):
                         aio_sess=session)
 
         try:
-            await create_entry(title, url, tags)
+            if url.strip():
+                await create_entry(title, url, tags)
         except:
             print("Failed for ", url)
 
@@ -127,7 +166,8 @@ def main():
     session = cluster.connect(keyspace="test")
     connection.setup(['cassandra'], "cqlengine", protocol_version=3)
     sync_table(Entry)
-
+    sync_table(Tags)
+    sync_table(Published_by)
     callback()
 
 if __name__ == '__main__':

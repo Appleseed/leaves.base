@@ -9,7 +9,7 @@ default_output_file = ''
 no_of_parameters = len(sys.argv)
 
 if no_of_parameters == 1:
-    f = open('awesome.param')
+    f = open('awesome-transform.param')
     for lno, fname in enumerate(f):
         if lno == 0:
            default_input_file = fname.rstrip()

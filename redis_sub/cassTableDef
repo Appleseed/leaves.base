@@ -1,0 +1,41 @@
+create table
+Entry(
+id int,
+user_name text,
+title text,
+url text,
+is_archived int,
+is_starred int,
+content	 text,
+create_at timestamp,
+update_at timestamp,
+mimetype text,
+language text,
+reading_time int,
+domain_name text,
+preview_picture text,
+uid text,
+http_status text,
+published_at timestamp,
+published_by text,
+headers text,
+starred_at timestamp,
+origin_url text,
+PRIMARY KEY (id));
+
+
+create table
+tags(
+tag text,
+slug text,
+id int,
+url text,
+PRIMARY KEY ((tag),id));
+
+create table
+published_by(
+publisher text,
+title text,
+id int,
+url text,
+PRIMARY KEY ((publisher),id));

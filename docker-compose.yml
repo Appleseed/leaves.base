@@ -22,7 +22,8 @@ services:
     ports:
       - 80:80
     volumes:
-      - C:\Users\DELL\Docker_proj\wallabag\wallabag_images:/var/www/wallabag/web/assets/images
+      - //C/Users/DELL/Docker_proj/wallabag/wallabag_images:/var/www/wallabag/web/assets/images
+
   db:
     image: mariadb
     command: 
@@ -31,24 +32,39 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=wallaroot
     volumes:
-      - /home/azureuser/data/mysql:/var/lib/mysql
+      - //C/Users/DELL/Docker_proj/wallabag/wallabag_mysql:/var/lib/mysql
+
   redis:
     image: redis:alpine
-
 
   awesome_transform:
     image: jagannathbilgi/awesome-transform
     environment:
       - REDIS_IP={{redis|container_ip}}
-      - CASS_IP={{cassandra:9042}}
+
+    volumes:
+      - c:\Users\DELL\Docker_proj\wallabag\awesome_share:/var/awesome
 
     ports:
       - 5000:5000
+
+  redispub:
+    image: jagannathbilgi/redispub
+
+    volumes:
+      - c:\Users\DELL\Docker_proj\wallabag\awesome_share:/var/awesome
 
   cassandra:
     image: cassandra:latest
     volumes:
       - c:\Users\DELL\Docker_proj\wallabag\cassandra-persistence:/var/lib/cassandra
+
+  redissub:
+    image: jagannathbilgi/redissub
+    depends_on: 
+      - "cassandra"
+    environment:
+      - CASS_IP={{cassandra:9042}}
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

@@ -1,8 +1,5 @@
 import sys
-import os
-import platform
 import tomd
-from tomd import Tomd
 from html.parser import HTMLParser
 import Split_html_markdown
 
@@ -28,6 +25,8 @@ d_file = file1 + ".md"
 html_file = file1 + "_p1.html"
 md_file = file1 + "_p2.md"
 final_file = file1 + "_cp.md"
+tmp_file = file1 + "_tmp.md"
+
 
 only_md = Split_html_markdown.split_file(d_file, html_file, md_file)
 
@@ -40,16 +39,13 @@ if not only_md :
 
     with open(final_file, 'w') as w, \
             open(md_file, 'r') as p2:
-        w.write((tomd.Tomd(td.get_text()).markdown).replace("# ","# "+file1).strip())
-        w.write(p2.read())
+        w.write((tomd.Tomd(td.get_text()).markdown).encode('ascii', 'ignore').decode('ascii').replace("# ", "# " + file1).strip())
+        w.write((p2.read()).encode('ascii', 'ignore').decode('ascii'))
 else:
     with open(final_file, 'wb') as w, \
             open(d_file, 'rb') as p2:
+         w.write((p2.read()).decode('ascii', 'ignore').encode('utf-8'))
+"""
         for line in p2:
             w.write(line.decode('ascii', errors='ignore').replace('\0', '').encode('utf-8'))
-    """
-    if platform.system() != 'Windows':
-	    os.system("mv %s %s"%(d_file,final_file))
-    else:
-	    os.system("rename %s %s"%(d_file,final_file))
-    """
+"""

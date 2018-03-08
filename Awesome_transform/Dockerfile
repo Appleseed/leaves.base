@@ -21,7 +21,7 @@ RUN apt-get -qq update \
 WORKDIR /awesome_transform
 
 # Copy the current directory contents into the container at /app
-ADD . /awesome_transform
+ADD ../ /awesome_transform
 
 CMD ["python3.6", "drv.py"]
 

@@ -32,3 +32,31 @@ class Entry(Base):
                         'id' : str(self.id),
                         'url' : self.url
                 }
+
+class Tags(Base):
+        tag = columns.Text(primary_key=True)
+        id = columns.Integer(primary_key=True)
+        slug = columns.Text()
+        url = columns.Text()
+
+        def get_data(self):
+                return {
+                        'tag': self.tag,
+                        'id': self.id,
+                        'slug': self.slug,
+                        'url': self.url
+                }
+
+class Published_by(Base):
+        publisher = columns.Text(primary_key=True)
+        id = columns.Integer(primary_key=True)
+        title = columns.Text()
+        url = columns.Text()
+
+        def get_data(self):
+                return {
+                        'publisher': self.publisher,
+                        'id': self.id,
+                        'title': self.title,
+                        'url': self.url
+                }

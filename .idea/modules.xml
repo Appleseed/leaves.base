@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../awesome-transform/.idea/awesome-transform.iml" filepath="$PROJECT_DIR$/../awesome-transform/.idea/awesome-transform.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/awesome-transform.iml" filepath="$PROJECT_DIR$/.idea/awesome-transform.iml" />
     </modules>
   </component>
