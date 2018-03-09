@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fcdb88e-471d-407e-a6b0-90dac3a34483" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/awesome-transform.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/Dockerfile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/Get_awesome_list.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/Old/Testcass/testcass.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/Old/loadToWallabag.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/Old/persist_in_wallabag.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/Old/pub.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/Old/sub.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/Old/testcass.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/Old/wallabag_param" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/Split_html_markdown.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/awesome.param" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/collect_awesome_md_csvpy.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/drv.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/html_to_markdown.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/tomd.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Awesome-transform/transform.awesome.json.csv.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
-    </list>
+    <list default="true" id="8fcdb88e-471d-407e-a6b0-90dac3a34483" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +38,18 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="sub.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/redis_sub/sub.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="173" column="10" lean-forward="false" selection-start-line="173" selection-start-column="10" selection-end-line="173" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -192,11 +181,6 @@
             <path>
               <item name="awesome" type="b2602c69:ProjectViewProjectNode" />
               <item name="awesome-transform" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="awesome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="awesome-transform" type="462c0819:PsiDirectoryNode" />
-              <item name="Awesome_transform" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="awesome" type="b2602c69:ProjectViewProjectNode" />
@@ -538,6 +522,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864866" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
@@ -545,7 +530,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38538206" sideWeight="0.78411514" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17537314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17697228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -904,13 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/redis_sub/sub.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="173" column="10" lean-forward="false" selection-start-line="173" selection-start-column="10" selection-end-line="173" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/redis_sub/CassStruct/cassStruct.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -937,7 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="134" lean-forward="false" selection-start-line="0" selection-start-column="134" selection-end-line="0" selection-end-column="134" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,6 +922,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redis_sub/sub.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="173" column="10" lean-forward="false" selection-start-line="173" selection-start-column="10" selection-end-line="173" selection-end-column="10" />
           <folding />
         </state>
       </provider>
