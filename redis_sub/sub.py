@@ -1,17 +1,16 @@
 import asyncio
-import json
 import csv
+import json
+from datetime import datetime
 
 import aiohttp
 import redis
-from wallabag_api.wallabag import Wallabag
-
 from cassandra.cluster import Cluster
 from cassandra.cqlengine import connection
 from cassandra.cqlengine.management import sync_table
+from wallabag_api.wallabag import Wallabag
 from CassStruct.cassStruct import Entry, Tags, Published_by
-from datetime import datetime
-
+import time
 param = json
 
 my_host = ""
@@ -63,14 +62,14 @@ async def wallabagAPI(loop):
 
            tag_flag = 0
            publishers_flag = 0
-           entry = Entry.create(id=data["id"], user_name = data["user_name"], title=data["title"], url=data["url"],is_archived=data["is_archived"],
-                                is_starred = data["is_starred"], content = data["content"], create_at = crt_at,
-                                update_at = upd_at, mimetype = data["mimetype"], language = data["language"],
-                                reading_time = data["reading_time"], domain_name = data["domain_name"],
-                                preview_picture = data["preview_picture"], uid = data["uid"],
-                                http_status = data["http_status"], published_at = upd_at,
-                                published_by = published_by, headers = data["headers"],
-                                starred_at = strd_at, origin_url = data["origin_url"] )
+           entry = Entry.create(id=data["id"], user_name = data["user_name"], title=data["title"], url=data["url"], is_archived=data["is_archived"],
+                                                                is_starred = data["is_starred"], content = data["content"], create_at = crt_at,
+                                                                update_at = upd_at, mimetype = data["mimetype"], language = data["language"],
+                                                                reading_time = data["reading_time"], domain_name = data["domain_name"],
+                                                                preview_picture = data["preview_picture"], uid = data["uid"],
+                                                                http_status = data["http_status"], published_at = upd_at,
+                                                                published_by = published_by, headers = data["headers"],
+                                                                starred_at = strd_at, origin_url = data["origin_url"])
            if data["tags"]:
                 for row in data["tags"]:
                     if len(row["label"]) != 0:
@@ -158,17 +157,32 @@ def callback():
                 callWallabag(title, url, tags)
 
 def main():
-    cluster = Cluster(['cassandra'],port=9042)
-    session = cluster.connect()
-    session.execute(
-            """CREATE KEYSPACE IF NOT EXISTS test WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };"""
-        )
-    session = cluster.connect(keyspace="test")
-    connection.setup(['cassandra'], "cqlengine", protocol_version=3)
-    sync_table(Entry)
-    sync_table(Tags)
-    sync_table(Published_by)
-    callback()
+    print("Waiting for cassandra to to be available")
+    retires = 0
+    conn = False
+    while retires < 6 and conn == False:
+        try:
+            cluster = Cluster(['cassandra'], port=9042)
+            session = cluster.connect()
+            conn = True
+        except:
+            retires = retires + 1
+            time.sleep(30)
+            continue
+
+    if not conn:
+        print("Unable to connect to Cassandra")
+    else:
+        print("Connected to cassandra")
+        session.execute(
+                """CREATE KEYSPACE IF NOT EXISTS test WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };"""
+            )
+        session = cluster.connect(keyspace="test")
+        connection.setup(['cassandra'], "cqlengine", protocol_version=3)
+        sync_table(Entry)
+        sync_table(Tags)
+        sync_table(Published_by)
+        callback()
 
 if __name__ == '__main__':
     main()

@@ -1,7 +1,7 @@
 #######################################
 #  Appleseed.Leaves.App
 #######################################
-version: '2'
+version: '2.1'
 services:
   wallabag:
     image: wallabag/wallabag
@@ -61,8 +61,6 @@ services:
 
   redissub:
     image: jagannathbilgi/redissub
-    depends_on: 
-      - "cassandra"
     environment:
       - CASS_IP={{cassandra:9042}}
 
