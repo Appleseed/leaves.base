@@ -5,4 +5,4 @@ RUN python3.6 -m pip install cassandra-driver \
     && python3.6 -m pip install redis \
     && python3.6 -m pip install aiohttp \
     && python3.6 -m pip install wallabag_api
-CMD [ "python3.6", "sub.py" ]
+CMD [ "python3.6", "Subscribe.py" ]

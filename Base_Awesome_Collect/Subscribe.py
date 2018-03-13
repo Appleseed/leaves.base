@@ -1,3 +1,5 @@
+# Written by Jagannath Bilgi <jsbilgi@yahoo.com>
+
 import asyncio
 import csv
 import json
@@ -10,6 +12,25 @@ from cassandra.cqlengine import connection
 from cassandra.cqlengine.management import sync_table
 from wallabag_api.wallabag import Wallabag
 from CassStruct.cassStruct import Entry, Tags, Published_by
+
+"""
+Needs to meet all prerequisite of wallabag program
+ 
+Update wallabag_param file with Wallagabag host and login parameters
+ 
+This module reads redis message queue and loads entries to wallagbag through wallabag_api.
+
+Below lines in wallaba_api is commented and replaced line 3 
+        # if len(tags) > 0 and ',' in tags:          #Line 1
+        #     params['tags'] = tags.split(',')       #Line 2
+        params['tags'] = tags                        #Line 3
+
+Wallagbag's returned information is stored in Entry, Tags and Published_by cassandra tables under awesome_transform key space.
+
+Process waits for "cassandra" host with 9042 port to be available for 180 sec. Process exists if host is not available
+ 
+"""
+
 import time
 param = json
 
@@ -31,6 +52,8 @@ async def wallabagAPI(loop):
               'client_secret': client_secret,
               'extension': extension}
 
+    #get wallabag token
+
     token = await Wallabag.get_token(host=my_host, **params)
 
     def pr_post_entries(title, url, tags):
@@ -42,6 +65,10 @@ async def wallabagAPI(loop):
     async def create_entry(title, url, tags):
         print('Title ', title, ' url ', url, ' tags ', tags)
         data = await pr_post_entries(title, url, tags)
+        """
+        Wallabag returns date fileds including fractions. Hence convert 
+        it to cassndra timestamp format 
+        """
         try:
            crt_at = datetime.strptime(data["created_at"], "%Y-%m-%dT%H:%M:%S+%f")
            upd_at = datetime.strptime(data["updated_at"], "%Y-%m-%dT%H:%M:%S+%f")
@@ -54,6 +81,10 @@ async def wallabagAPI(loop):
                strd_at = datetime.strptime(data["starred_at"], "%Y-%m-%dT%H:%M:%S+%f")
            else:
                strd_at = None
+
+           """
+           Wallabag provides Published_by as a list of values. Convert it to comma separated for  display purpose
+           """
 
            if type(data["published_by"]) == list :
                published_by = ''.join(data["published_by"])
@@ -129,6 +160,7 @@ def callWallabag(p_title, p_url, p_tags):
     client_secret = param["client_secret"]
     extension = param["extension"]
 
+    # Create event loop required for wallabag api
     loop = asyncio.get_event_loop()
     loop.run_until_complete(wallabagAPI(loop))
 
@@ -136,9 +168,18 @@ def callback():
     global title
     global url
     global tags
+    """
+    Reading messages from redis queue with "decode_responses=True ensures" ensures messages are read properly in ascii.
+    Noticed that redis always sending first message as 1 and need to be ignored. Parsed message is stored in below variables
+     
+    title
+    url
+    tags
+       
+    """
     r = redis.client.StrictRedis(host='redis', decode_responses=True)
     sub = r.pubsub()
-    sub.subscribe('clock')
+    sub.subscribe('awesome')
     while True:
         for m in sub.listen():
             title = ''
@@ -162,12 +203,12 @@ def main():
     conn = False
     while retires < 6 and conn == False:
         try:
+            time.sleep(30)
             cluster = Cluster(['cassandra'], port=9042)
             session = cluster.connect()
             conn = True
         except:
             retires = retires + 1
-            time.sleep(30)
             continue
 
     if not conn:
@@ -175,13 +216,24 @@ def main():
     else:
         print("Connected to cassandra")
         session.execute(
-                """CREATE KEYSPACE IF NOT EXISTS test WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };"""
+                """CREATE KEYSPACE IF NOT EXISTS awesome_transform WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };"""
             )
-        session = cluster.connect(keyspace="test")
+        session = cluster.connect(keyspace="awesome_transform")
+
+        # Establish cqlsh connection with cassnadra
+
         connection.setup(['cassandra'], "cqlengine", protocol_version=3)
+
+        # Sync application class definition with casandra table structure
+
         sync_table(Entry)
         sync_table(Tags)
         sync_table(Published_by)
+
+        """
+        Creates event loop that is required for wallabag api. Wallabag token is generated using login parameter saved in walla_param json file
+        Save wallabag response in cassandra tables
+        """
         callback()
 
 if __name__ == '__main__':

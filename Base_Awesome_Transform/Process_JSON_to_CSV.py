@@ -1,7 +1,19 @@
 # coding: utf-8
+
+# Written by Jagannath Bilgi <jsbilgi@yahoo.com>
+
 import sys
 import json
 import re
+
+"""
+Program accepts *.md document and converts to csv in required format
+
+Program parse line by line and uses recursive method to traverse from leaf to root. 
+Single turn object (string, int etc) is used as point of return from recursion.
+
+
+"""
 
 default_input_file = ''
 default_output_file = ''
@@ -50,14 +62,11 @@ def obj_rec(obj, t, flag=0,acc=''):
             if flag == 0:
                 return acc + '\n'
             else:
-#                return acc + url + ',' + '"' + t + '"'  + '\n'
                 return acc + url_title + ',' + '"' + t + '"'  + '\n'
         else:
             if flag == 0:
-#                return ',,"' + url +',' + t + '"'  + '\n'
                 return ',,"' + url_title + ',' + t + '"' + '\n'
             else:
-#                return ',' + url + ',' + '"' + t + '"'  + '\n'
                 return ',' + url_title + ',' + '"' + t + '"'  + '\n'
     elif v_obj == list:
             if obj :
@@ -88,7 +97,6 @@ def obj_rec(obj, t, flag=0,acc=''):
                     else:
                         sep = ''
                     if not url:
-#                        r = sep + url + ',' + '"' + t + ',' + k + '",\n'
                         r = sep + url_title + ',' + '"' + t + ',' + k + '",\n'
                 break
             del obj[k]

@@ -1,7 +1,10 @@
 import logging
 import sys
-import pub
+import Publish
 
+"""
+Once new file under "/var/awesome-transform" directory is written, "file create" event is triggered and messages are published to redis queue 
+"""
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
@@ -15,7 +18,7 @@ class MyEventHandler(FileSystemEventHandler):
         print ("e", event)
         if not event.is_directory:
             print ("File created ", event.src_path)
-            pub.pubToRedis(event.src_path)
+            Publish.publishToRedis(event.src_path)
 
 def main(argv=None):
     path = "/var/awesome-transform"

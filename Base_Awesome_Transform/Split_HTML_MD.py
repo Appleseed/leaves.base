@@ -1,3 +1,11 @@
+# Written by Jagannath Bilgi <jsbilgi@yahoo.com>
+
+"""
+    Program return true if file content starts with '#'
+    else creates 2 files. *_p1.html with HTML and *_p2.md with markdown
+"""
+
+
 def split_file(org_file, html_file, md_file):
     start_of_markdown = False
     with open(org_file, 'rb') as html_markdown:

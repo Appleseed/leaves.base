@@ -23,7 +23,6 @@ starred_at timestamp,
 origin_url text,
 PRIMARY KEY (id));
 
-
 create table
 tags(
 tag text,

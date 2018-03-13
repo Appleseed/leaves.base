@@ -1,7 +1,19 @@
+# Written by Jagannath Bilgi <jsbilgi@yahoo.com>
+
 import sys
 import tomd
 from html.parser import HTMLParser
-import Split_html_markdown
+import Split_HTML_MD
+
+"""
+    "md_to_json" program needs input document to be purely in mmarkdown format. However markdown support mix of html and markdown.
+    This program converts input document to pure markdown document by splitting html section (*_p1.html) and markdown section (*_p2.md).
+    It removes images from html and converts to markdown using TagDropper.
+    
+    Special characters are removed using encode and decode function
+    
+    Finally merged *_Cp.md file is created 
+"""
 
 class TagDropper(HTMLParser):
     def __init__(self, tags_to_drop, *args, **kwargs):
@@ -25,10 +37,9 @@ d_file = file1 + ".md"
 html_file = file1 + "_p1.html"
 md_file = file1 + "_p2.md"
 final_file = file1 + "_cp.md"
-tmp_file = file1 + "_tmp.md"
 
 
-only_md = Split_html_markdown.split_file(d_file, html_file, md_file)
+only_md = Split_HTML_MD.split_file(d_file, html_file, md_file)
 
 if not only_md :
     with open(html_file, 'r') as f:
@@ -44,8 +55,4 @@ if not only_md :
 else:
     with open(final_file, 'wb') as w, \
             open(d_file, 'rb') as p2:
-         w.write((p2.read()).decode('ascii', 'ignore').encode('utf-8'))
-"""
-        for line in p2:
-            w.write(line.decode('ascii', errors='ignore').replace('\0', '').encode('utf-8'))
-"""
+        w.write((p2.read()).decode('ascii', 'ignore').encode('utf-8'))

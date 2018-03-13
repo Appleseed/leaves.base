@@ -4,6 +4,11 @@ import re
 import os
 import warnings
 
+"""
+
+Third party code downloaded from web
+
+"""
 __all__ = ['Tomd', 'convert']
 
 MARKDOWN = {
