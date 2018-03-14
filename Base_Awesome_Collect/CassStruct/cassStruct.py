@@ -3,7 +3,7 @@ from cassandra.cqlengine import columns
 
 class Base(Model):
     __abstract__ = True
-    __keyspace__ = "test"
+    __keyspace__ = "awesome_transform"
 
 class Entry(Base):
         user_name = columns.Text()

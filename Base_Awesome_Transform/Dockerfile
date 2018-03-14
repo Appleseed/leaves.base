@@ -13,15 +13,13 @@ RUN apt-get -qq update \
 && python3.6 -m pip install pip --upgrade \
 && python3.6 -m pip install wheel \
 && python3.6 -m pip install flask \
-&& python3.6 -m pip install markdown-to-json \
-&& python3.6 -m pip install wallabag_api \
-&& python3.6 -m pip install redis
+&& python3.6 -m pip install markdown-to-json
 
-# Set the working directory to /app
+# Set the working directory
 WORKDIR /awesome_transform
 
-# Copy the current directory contents into the container at /app
-ADD ../ /awesome_transform
+# Copy the current directory contents into the container
+ADD . /awesome_transform
 
 CMD ["python3.6", "App.py"]
 

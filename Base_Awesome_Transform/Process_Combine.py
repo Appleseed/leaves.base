@@ -2,7 +2,7 @@
 
 import os
 import platform
-
+import Process_MD_to_JSON
 """
 
 Program downloads and converts makrdown document to csv file.
@@ -50,12 +50,13 @@ def md_to_csv(p1, p2):
 
     os.system("curl %s -k -o %s"%(param1,file_md))
     os.system("'python3.6' Process_HTML_to_MD.py %s"%(param2))
-    os.system("'python3.6' Process_MD_to_JSON.py %s %s" % (file_json, file_md_cp))
+    Process_MD_to_JSON.convert(file_json, file_md_cp)
     os.system("'python3.6' Process_JSON_to_CSV.py %s %s"%(file_json, file_csv))
     if platform.system() != 'Windows':
         os.system('ls -lrt')
-        os.system("mv %s /var/awesome-transform"%(file_csv))
+        os.system("mv %s /var/awesome"%(file_csv))
         os.system("rm %s*"%p2)
     else:
         os.system('dir /b %s*'%(p2))
     return "Done"
+

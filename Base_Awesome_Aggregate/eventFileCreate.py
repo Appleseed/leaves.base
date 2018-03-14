@@ -21,7 +21,8 @@ class MyEventHandler(FileSystemEventHandler):
             Publish.publishToRedis(event.src_path)
 
 def main(argv=None):
-    path = "/var/awesome-transform"
+    path = "/var/awesome"
+    # path = 'C:/Users/DELL'
 
     observer = Observer()
     event_handler = MyEventHandler(observer)

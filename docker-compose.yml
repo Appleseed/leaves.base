@@ -48,8 +48,8 @@ services:
     ports:
       - 5000:5000
 
-  redispub:
-    image: jagannathbilgi/redispub
+  redis_aggregate:
+    image: jagannathbilgi/redis_aggregate
 
     volumes:
       - c:\Users\DELL\Docker_proj\wallabag\awesome_share:/var/awesome
@@ -59,8 +59,8 @@ services:
     volumes:
       - c:\Users\DELL\Docker_proj\wallabag\cassandra-persistence:/var/lib/cassandra
 
-  redissub:
-    image: jagannathbilgi/redissub
+  redis_collect:
+    image: jagannathbilgi/redis_collect
     environment:
       - CASS_IP={{cassandra:9042}}
 

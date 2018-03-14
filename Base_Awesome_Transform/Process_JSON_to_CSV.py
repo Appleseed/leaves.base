@@ -1,5 +1,3 @@
-# coding: utf-8
-
 # Written by Jagannath Bilgi <jsbilgi@yahoo.com>
 
 import sys
