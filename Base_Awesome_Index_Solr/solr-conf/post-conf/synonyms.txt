@@ -1,0 +1,52 @@
+ADHD,ADD,Attention Deficit Disorder
+ACLS,Advanced Cardiac Life support,
+Hay Fever,Allergies,Allergic Rhinitis
+Lazy Eye,Amblyopia,
+Eating Disorders,Anorexia, Bulimia
+abnormal Heart beat,Arrhythmia,
+ARVC,Arrhythmogenic Right Ventricular Cardiomyopathy,
+Anaphylaxis,Bee Sting Reaction,
+Heart,Cardiology,Cardivascular,Cardiac,
+Breathing,Cardiopulmonary,Pulmonary
+Lungs,Cardiopulmonary,Pulmonary
+Birth defects,Congenital,
+Skin,Dermatology,
+ER,Emergency Medicine,
+glands,Endocrinology,diabetes
+Digestive,Gastroenterology,
+old,Geriatric,
+Cardiovascular,Heart,Vascular
+Blood,Hematology,
+Liver,Hepatology,
+HCM,Hypertrophic Cardiomyopathy,
+ALS,Lou Gehrigs,
+Kidney,Nephrology,
+Nerves,Neurology,Neurological,Brain,
+Cancer,Oncology,
+Eye,Ophthalmology,
+Bones,Orthopedic,
+Muscles,Orthopedic,
+Joints,Orthopedic,
+Fractures,Orthopedics,
+Hearing,Otolaryngology,
+Ear,Otolaryngology,
+Nose,Otolaryngology,
+Throat,Otolaryngology,
+Peripheral Artery Disease,PAD,
+Hospice,Palliative,
+Child,Pediatrics,Children
+X-ray,Radiology,
+Ultrasound,Radiology,
+Colon,Rectal,
+Fertility,Reproductive Health,
+Arthritis,Rheumatology,
+Addiction,Substance Abuse,
+Transcatheter Aortic Valve replacement,TAVR,
+Chest,Thoracic,
+Urinary tract,Urology,
+Mental,Psychiatry,Behavioral
+Mental,Psychology,Behavioral
+OB,Obstetrics Gynecology,OBGYN,Female,Gyno 
+Pregnancy,Obstetrics Gynecology,
+Birth,Obstetrics Gynecology,Childbirth
+PM&R,Physical Medicine Rehabilitation ,
