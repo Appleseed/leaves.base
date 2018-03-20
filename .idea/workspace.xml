@@ -1,7 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fcdb88e-471d-407e-a6b0-90dac3a34483" name="Default" comment="" />
+    <list default="true" id="8fcdb88e-471d-407e-a6b0-90dac3a34483" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/app/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/app/field_config.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/app/model.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/config.ini" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/docs.db" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/init.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/processor.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/requirements.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/post-conf/elevate.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/post-conf/mapping-ISOLatin1Accent.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/post-conf/protwords.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/post-conf/schema.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/post-conf/schema_extra_fields.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/post-conf/schema_extra_types.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/post-conf/solrconfig.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/post-conf/solrconfig_extra.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/post-conf/solrcore.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/post-conf/stopwords.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/post-conf/synonyms.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/elevate.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/mapping-ISOLatin1Accent.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/protwords.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/schema.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/schema_extra_fields.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/schema_extra_types.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/solrconfig.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/solrconfig_extra.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/solrcore.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/stopwords.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/synonyms.txt" afterPath="" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,52 +79,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="processor.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/processor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="74" column="6" lean-forward="false" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/config.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="92" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="92" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="init.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/init.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -100,10 +90,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>split_fi</find>
-      <find>findall</find>
-      <find>url_title</find>
-      <find>python</find>
       <find>open</find>
       <find>split</find>
       <find>ClientSession</find>
@@ -122,6 +108,18 @@
       <find>test</find>
       <find>python3.6</find>
       <find>PRE_EP</find>
+      <find>Document</find>
+      <find>physicianConditionsphysicianConditions</find>
+      <find>document</find>
+      <find>ss_field_degree</find>
+      <find>item_id</find>
+      <find>sort_search_api_id</find>
+      <find>working</find>
+      <find>site_domain_map</find>
+      <find>field_mapping</find>
+      <find>physicianDomainAccess</find>
+      <find>physicianConditions</find>
+      <find>physicianMedicalDegree</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -231,17 +229,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="awesome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="awesome-transform" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Default">
           <expand>
@@ -263,7 +251,17 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="awesome" type="b2602c69:ProjectViewProjectNode" />
+              <item name="awesome-transform" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -581,7 +579,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46054053" sideWeight="0.78411514" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24253732" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.122068234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -662,9 +660,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Old/pub.py" />
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Old/Testcass/testcass.py" />
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Old/sub.py" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Old/scrape.py" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Old/collect.awesome.md.csvpy.py" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Old/t1.py" />
@@ -723,13 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Data/sindresorhus.md" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -738,13 +726,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Aggregate/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -756,13 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/cassTableDef">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -787,48 +762,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/CassStruct/cassStruct.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Split_HTML_MD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_HTML_to_MD.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
           <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_JSON_to_CSV.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_MD_to_JSON.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_Combine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
-          <folding>
-            <element signature="e#50#59#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -860,38 +797,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/solrcore.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/app/field_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/app/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/Subscribe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -909,46 +818,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/cassTableDef">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/app/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/elevate.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/solrconfig_extra.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/solrcore.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/schema.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7225">
+          <caret line="425" column="56" lean-forward="false" selection-start-line="425" selection-start-column="38" selection-end-line="425" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/init.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/config.ini">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/CassStruct/cassStruct.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/app/field_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_JSON_to_CSV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="112" column="61" lean-forward="true" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_MD_to_JSON.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Split_HTML_MD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_Combine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+          <folding>
+            <element signature="e#50#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="92" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="92" />
-          <folding />
+          <caret line="1" column="18" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/Subscribe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/processor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="74" column="6" lean-forward="false" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="296">
+          <caret line="239" column="37" lean-forward="true" selection-start-line="239" selection-start-column="37" selection-end-line="239" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
