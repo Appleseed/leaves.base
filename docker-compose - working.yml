@@ -76,11 +76,12 @@ services:
      image: solr
      ports: 
        - "8983:8983"
-     volumes: 
+     volumes:  
        - data:/opt/solr/server/solr/mycores
      entrypoint:
        - solr-precreate
        - mycore2
+
 volumes:
   data:
   cassandra_data:
