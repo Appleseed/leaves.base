@@ -77,10 +77,11 @@ services:
      ports: 
        - "8983:8983"
      volumes: 
-       - data:/opt/solr/server/solr/mycores
+       - ./mycores:/opt/solr/server/solr/mycores
+       - ./myconf:/opt/solr/server/solr/configsets/myconf
      entrypoint:
        - solr-precreate
        - mycore2
+       - /opt/solr/server/solr/configsets/myconf
 volumes:
-  data:
   cassandra_data:
