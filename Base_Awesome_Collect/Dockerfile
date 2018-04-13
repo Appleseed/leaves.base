@@ -4,5 +4,6 @@ ADD . /redis_sub
 RUN python3.6 -m pip install cassandra-driver \
     && python3.6 -m pip install redis \
     && python3.6 -m pip install aiohttp \
-    && python3.6 -m pip install wallabag_api
+    && python3.6 -m pip install wallabag_api \
+    && python3.6 -m pip install requests
 CMD [ "python3.6", "Subscribe.py" ]

@@ -13,6 +13,7 @@ from cassandra.cqlengine.management import sync_table
 from wallabag_api.wallabag import Wallabag
 from CassStruct.cassStruct import Entry, Tags, Published_by
 
+import processor_solr
 """
 Needs to meet all prerequisite of wallabag program
  
@@ -65,6 +66,20 @@ async def wallabagAPI(loop):
     async def create_entry(title, url, tags):
         print('Title ', title, ' url ', url, ' tags ', tags)
         data = await pr_post_entries(title, url, tags)
+
+        """
+        Ingesting to solr
+        """
+
+        try:
+            processor_solr.ingest_solr(data)
+        except Exception as e:
+            print("Error ", str(e))
+
+        """
+        End of solr ingestion
+        """
+
         """
         Wallabag returns date fileds including fractions. Hence convert 
         it to cassndra timestamp format 

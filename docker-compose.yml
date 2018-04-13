@@ -57,10 +57,11 @@ services:
   cassandra:
     image: cassandra:latest
     volumes:
-      - c:\Users\DELL\Docker_proj\wallabag\cassandra-persistence:/var/lib/cassandra
+      - cassandra_data:/var/lib/cassandra:rw
+
 
   redis_collect:
-    image: jagannathbilgi/redis_collect
+    image: jagannathbilgi/redis_collect_new
     environment:
       - CASS_IP={{cassandra:9042}}
 
@@ -70,3 +71,17 @@ services:
       - db:db
     ports:
       - 83:80
+      
+  solr:
+     image: solr
+     ports: 
+       - "8983:8983"
+     volumes:  
+       - data:/opt/solr/server/solr/mycores
+     entrypoint:
+       - solr-precreate
+       - mycore2
+
+volumes:
+  data:
+  cassandra_data:
