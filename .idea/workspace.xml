@@ -2,10 +2,155 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fcdb88e-471d-407e-a6b0-90dac3a34483" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Base_Awesome_Collect/Dockerfile" afterPath="$PROJECT_DIR$/Base_Awesome_Collect/Dockerfile" />
-      <change beforePath="$PROJECT_DIR$/Base_Awesome_Collect/Subscribe.py" afterPath="$PROJECT_DIR$/Base_Awesome_Collect/Subscribe.py" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Collect/processor_solr.py" afterPath="$PROJECT_DIR$/Base_Awesome_Collect/processor_solr.py" />
+      <change beforePath="$PROJECT_DIR$/Base_Awesome_Collect/wallabag_param" afterPath="$PROJECT_DIR$/Base_Awesome_Collect/wallabag_param" />
+      <change beforePath="$PROJECT_DIR$/myconf/conf/schema.xml" afterPath="$PROJECT_DIR$/myconf/conf/schema.xml" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/_rest_managed.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/_schema_analysis_stopwords_english.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/_schema_analysis_synonyms_english.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/admin-extra.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/admin-extra.menu-bottom.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/admin-extra.menu-top.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/clustering/carrot2/README.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/clustering/carrot2/kmeans-attributes.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/clustering/carrot2/lingo-attributes.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/clustering/carrot2/stc-attributes.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/currency.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/elevate.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/contractions_ca.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/contractions_fr.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/contractions_ga.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/contractions_it.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/hyphenations_ga.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stemdict_nl.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stoptags_ja.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_ar.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_bg.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_ca.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_ckb.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_cz.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_da.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_de.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_el.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_en.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_es.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_eu.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_fa.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_fi.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_fr.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_ga.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_gl.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_hi.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_hu.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_hy.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_id.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_it.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_ja.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_lv.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_nl.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_no.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_pt.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_ro.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_ru.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_sv.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_th.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/stopwords_tr.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/lang/userdict_ja.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/managed-schema" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/mapping-FoldToASCII.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/mapping-ISOLatin1Accent.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/params.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/protwords.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/schema.xml.bak" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/solrconfig.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/spellings.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/stopwords.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/synonyms.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/update-script.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/README.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/VM_global_library.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/browse.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/cluster.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/cluster_results.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/debug.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/did_you_mean.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/error.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/facet_fields.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/facet_pivot.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/facet_queries.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/facet_ranges.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/facets.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/footer.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/head.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/header.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/hit.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/hit_grouped.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/hit_plain.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/join_doc.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/jquery.autocomplete.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/jquery.autocomplete.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/layout.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/main.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/mime_type_lists.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/pagination_bottom.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/pagination_top.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/product_doc.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/query.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/query_form.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/query_group.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/query_spatial.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/results_list.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/richtext_doc.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/suggest.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/velocity/tabs.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/xslt/example.xsl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/xslt/example_atom.xsl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/xslt/example_rss.xsl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/xslt/luke.xsl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/conf/xslt/updateXml.xsl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/core.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o.dii" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o.dim" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o.fdt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o.fdx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o.fnm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o.nvd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o.nvm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o.si" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o_Lucene50_0.doc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o_Lucene50_0.pos" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o_Lucene50_0.tim" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o_Lucene50_0.tip" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o_Lucene70_0.dvd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1o_Lucene70_0.dvm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p.dii" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p.dim" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p.fdt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p.fdx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p.fnm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p.nvd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p.nvm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p.si" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p_Lucene50_0.doc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p_Lucene50_0.pos" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p_Lucene50_0.tim" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p_Lucene50_0.tip" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p_Lucene70_0.dvd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/_1p_Lucene70_0.dvm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/index/segments_1l" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/tlog/tlog.0000000000000000046" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/tlog/tlog.0000000000000000047" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/tlog/tlog.0000000000000000048" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/tlog/tlog.0000000000000000049" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/tlog/tlog.0000000000000000050" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/tlog/tlog.0000000000000000051" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/tlog/tlog.0000000000000000052" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/tlog/tlog.0000000000000000053" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/tlog/tlog.0000000000000000054" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mycores/mycore2/data/tlog/tlog.0000000000000000055" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,10 +166,12 @@
     <SUITE FILE_PATH="coverage/awesome_transform$test_sc.coverage" NAME="test_sc Coverage Results" MODIFIED="1517437778510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../cgi-bin/awesome-transform" />
     <SUITE FILE_PATH="coverage/awesome_transform$loadToWallabag.coverage" NAME="loadToWallabag Coverage Results" MODIFIED="1519707183266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/awesome$sub.coverage" NAME="sub Coverage Results" MODIFIED="1520687621753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/redis_sub" />
+    <SUITE FILE_PATH="coverage/awesome$bs4_extract_body.coverage" NAME="bs4_extract_body Coverage Results" MODIFIED="1524078474179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Base_Awesome_Collect" />
     <SUITE FILE_PATH="coverage/awesome$eventFileCreate.coverage" NAME="eventFileCreate Coverage Results" MODIFIED="1520973434010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Base_Awesome_Aggregate" />
     <SUITE FILE_PATH="coverage/awesome$Process_Combine.coverage" NAME="Process_Combine Coverage Results" MODIFIED="1521001888782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Base_Awesome_Transform" />
     <SUITE FILE_PATH="coverage/awesome_transform$collect_awesome_md_csvpy.coverage" NAME="collect_awesome_md_csvpy Coverage Results" MODIFIED="1518212040442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/awesome_transform$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1517322111825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/awesome$text_replace.coverage" NAME="text_replace Coverage Results" MODIFIED="1523866753481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/awesome_transform$Get_url_list.coverage" NAME="Get_url_list Coverage Results" MODIFIED="1516771741480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/awesome_transform$html_to_markdown.coverage" NAME="html_to_markdown Coverage Results" MODIFIED="1518034063915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/awesome_transform$t2.coverage" NAME="t2 Coverage Results" MODIFIED="1519712586330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -50,26 +197,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Subscribe.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/Subscribe.py">
+      <file leaf-file-name="bs4_extract_body.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/bs4_extract_body.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-              <folding>
-                <element signature="e#50#64#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="processor_solr.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/processor_solr.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="789">
-              <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,10 +218,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ClientSession</find>
-      <find>post</find>
-      <find>PY_35</find>
-      <find>POST</find>
       <find>_RequestContextManager</find>
       <find>get_entri</find>
       <find>get_entry</find>
@@ -115,6 +244,10 @@
       <find>physicianMedicalDegree</find>
       <find>post-conf</find>
       <find>cassandra</find>
+      <find>file</find>
+      <find>html</find>
+      <find>with</find>
+      <find>open</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -123,10 +256,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/collect.awesome.md.csvpy.py" />
-        <option value="$PROJECT_DIR$/Get_awesome_list.py" />
-        <option value="$PROJECT_DIR$/transform.awesome.json.csv.py" />
-        <option value="$PROJECT_DIR$/drv.py" />
         <option value="$PROJECT_DIR$/Split_html_markdown.py" />
         <option value="$PROJECT_DIR$/t.py" />
         <option value="$PROJECT_DIR$/t1.py" />
@@ -173,7 +302,11 @@
         <option value="$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/processor.py" />
         <option value="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/README.md" />
         <option value="$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/processor/processor.py" />
+        <option value="$PROJECT_DIR$/text_replace.py" />
         <option value="$PROJECT_DIR$/Base_Awesome_Collect/Subscribe.py" />
+        <option value="$PROJECT_DIR$/te.py" />
+        <option value="$PROJECT_DIR$/Base_Awesome_Collect/processor_solr.py" />
+        <option value="$PROJECT_DIR$/Base_Awesome_Collect/bs4_extract_body.py" />
       </list>
     </option>
   </component>
@@ -294,7 +427,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.processor">
+  <component name="RunManager" selected="Python.bs4_extract_body">
     <configuration name="Process_Combine" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -314,20 +447,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="eventFileCreate" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="bs4_extract_body" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Base_Awesome_Aggregate" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Base_Awesome_Collect" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="awesome-transform" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Base_Awesome_Aggregate/eventFileCreate.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Base_Awesome_Collect/bs4_extract_body.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -371,21 +504,21 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="sub" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="text_replace" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/redis_sub" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="awesome-transform" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/redis_sub/sub.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/text_replace.py" />
+      <option name="PARAMETERS" value="Queue_A.txt 2 3 4" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -529,19 +662,19 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.sub" />
-      <item index="1" class="java.lang.String" itemvalue="Python.eventFileCreate" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Process_Combine" />
-      <item index="3" class="java.lang.String" itemvalue="Python.processor" />
-      <item index="4" class="java.lang.String" itemvalue="Python.init" />
+      <item index="0" class="java.lang.String" itemvalue="Python.Process_Combine" />
+      <item index="1" class="java.lang.String" itemvalue="Python.processor" />
+      <item index="2" class="java.lang.String" itemvalue="Python.init" />
+      <item index="3" class="java.lang.String" itemvalue="Python.text_replace" />
+      <item index="4" class="java.lang.String" itemvalue="Python.bs4_extract_body" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.processor" />
-        <item index="1" class="java.lang.String" itemvalue="Python.init" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Process_Combine" />
-        <item index="3" class="java.lang.String" itemvalue="Python.eventFileCreate" />
-        <item index="4" class="java.lang.String" itemvalue="Python.sub" />
+        <item index="0" class="java.lang.String" itemvalue="Python.bs4_extract_body" />
+        <item index="1" class="java.lang.String" itemvalue="Python.text_replace" />
+        <item index="2" class="java.lang.String" itemvalue="Python.processor" />
+        <item index="3" class="java.lang.String" itemvalue="Python.init" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Process_Combine" />
       </list>
     </recent_temporary>
   </component>
@@ -572,15 +705,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2064865" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864866" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46054053" sideWeight="0.21908316" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46054053" sideWeight="0.78411514" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.4968017" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46054053" sideWeight="0.78091687" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1988273" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23987207" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -656,73 +788,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="26" />
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/redis_sub1/sub.py" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="84" column="25" lean-forward="true" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Old/Get_awesome_list.py" />
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Old/tmp.sh" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/markdown_to_json/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/markdown_to_json/markdown_to_json.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Data/sindresorhus.csv" />
-    <entry file="file://$USER_HOME$/venv/Lib/site-packages/wallabag_api/wallabag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="206" column="29" lean-forward="true" selection-start-line="204" selection-start-column="8" selection-end-line="206" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/sampleRunScript">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="134" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Data/sindresorhus.md" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Aggregate/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -744,24 +814,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/tomd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/awesome.param">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_HTML_to_MD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -799,37 +855,6 @@
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/init.py" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/config.ini" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/app/field_config.py" />
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_JSON_to_CSV.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="112" column="61" lean-forward="true" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_MD_to_JSON.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Split_HTML_MD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_Combine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
-          <folding>
-            <element signature="e#50#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -857,23 +882,161 @@
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/processor/init.py" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/processor/config.ini" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/processor/processor.py" />
+    <entry file="file://$USER_HOME$/venv/Lib/genericpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/venv/Lib/_bootlocale.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/venv/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="193" column="0" lean-forward="false" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Queue_A.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/text_replace.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myconf/conf/schema.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myconf/conf/params.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myconf/conf/update-script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycores/mycore2/core.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myconf/conf/solrconfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="1032" column="27" lean-forward="false" selection-start-line="1032" selection-start-column="23" selection-end-line="1032" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_JSON_to_CSV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_MD_to_JSON.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/sampleRunScript">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/tomd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_Combine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="e#50#59#0" expanded="true" />
+            <element signature="e#102#1639#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Process_HTML_to_MD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Transform/Split_HTML_MD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/te.py" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/Subscribe.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="e#50#64#0" expanded="true" />
-          </folding>
+          <caret line="1" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/processor_solr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="789">
-          <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/bs4_extract_body.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -348,6 +348,19 @@
       </analyzer>
     </fieldType>
 
+	<!-- Field type for HTML fields, stripping HTML characters during indexing -->
+	<fieldType name="text_html" class="solr.TextField" positionIncrementGap="100">
+		<analyzer type="index">
+			<charFilter class="solr.HTMLStripCharFilterFactory"/>
+			<tokenizer class="solr.StandardTokenizerFactory"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+		<analyzer type="query">
+			<tokenizer class="solr.StandardTokenizerFactory"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+	</fieldType>
+
     <!-- A random sort type -->
     <fieldType name="rand" class="solr.RandomSortField" indexed="true" />
 
@@ -402,7 +415,8 @@
   <field name="_root_" type="string" docValues="false" indexed="true" stored="false"/>
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="_version_" type="plong" indexed="false" stored="false"/>
-  <field name="content" type="text_general"/>
+  <field name="content" type="text_general" indexed="true" stored="true"/>
+  <field name="content_text" type="text_general" indexed="true" stored="true"/>
   <field name="created_at" type="pdates"/>
   <field name="domain_name" type="text_general"/>
   <field name="http_status" type="plongs"/>
@@ -416,14 +430,15 @@
   <field name="published_at" type="pdates"/>
   <field name="published_by" type="text_general"/>
   <field name="reading_time" type="plongs"/>
-  <field name="slug" type="text_general"/>
-  <field name="tags" type="text_general"/>
+  <field name="tags" type="text_general" multiValued="true" indexed="true"/>
+  <field name="slugs" type="text_general" multiValued="true" indexed="true"/>
   <field name="title" type="text_general"/>
   <field name="updated_at" type="pdates"/>
   <field name="url" type="text_general"/>
   <field name="user_email" type="text_general"/>
   <field name="user_id" type="plongs"/>
   <field name="user_name" type="text_general"/>
+  <copyField source="*" dest="_text_" />
   </fields>
 
   <!-- Following is a dynamic way to include other fields, added by other contrib modules -->
