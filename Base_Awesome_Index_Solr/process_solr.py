@@ -29,7 +29,7 @@ def ingest_solr(doc):
            try:
                 content_text = bs4_extract_body.text_from_html(value)
            except:
-               pass
+               content_text = None
            post_docs[key] = value
            post_docs['content_text'] = content_text
        elif key == 'tags':
