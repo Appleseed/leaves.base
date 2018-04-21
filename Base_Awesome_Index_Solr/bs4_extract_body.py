@@ -4,8 +4,7 @@ from bs4 import BeautifulSoup
 from bs4.element import Comment
 
 """
-Below code is used for extracting readable text from site. Code is taken from web
- 
+Below code is used for extracting readable text from site. Code is referenced from web
 """
 def tag_visible(element):
     if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:

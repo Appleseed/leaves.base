@@ -51,6 +51,7 @@ def ingest_solr(doc):
            post_docs[key] = value
            if key == "id":
                id_val = value
+    print('Url ', post_docs['url'], ' Title ', post_docs['title'])
    try:
         requests.post(POST_EP + '/update/json/docs?commit=true', json=post_docs)
    except Exception as e:
@@ -72,7 +73,6 @@ def main():
         while True:
             for m in sub.listen():
                 if m['data'] != 1:
-                    # print(dict(list(m.items())[0:2]))
                     ingest_solr(eval("dict({})".format(m['data'])))
 
     except Exception as e:
