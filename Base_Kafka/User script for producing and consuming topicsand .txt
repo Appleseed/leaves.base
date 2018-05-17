@@ -1,0 +1,55 @@
+#script for listing topics 
+/usr/bin/kafka-topics --list --zookeeper localhost:2181
+
+#Script for creating application specific topic
+/usr/bin/kafka-topics --create --topic test_topic --partitions 1 --replication-factor 1 --if-not-exists --zookeeper localhost:2181
+
+#Script to list connectors 
+curl localhost:8083/connectors
+
+#Script to create connectors. connect-cassandra-source.json contains properties required for creating connector
+curl -X POST -H “Content-Type:application/json” -d @connect-cassandra-source.json localhost:8083/connectors
+
+#Script to delete connectors
+curl -X delete http://localhost:8083/connectors/packs
+
+#Script for consuming topics
+/usr/bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic test_topic
+
+#Steps for deleting topics
+1) Stop connector and kafka service
+2) connect to zookeeper
+3) connect to zookeeper client 
+   /usr/bin/zookeeper-shell localhost
+4) ls /brokers/topics
+5) delete topic marked to be deleted
+
+#Script for Cassandra
+CREATE KEYSPACE blog
+WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1};
+
+use blog;
+
+CREATE TABLE IF NOT EXISTS “pack_events” (
+    event_id TEXT, 
+    event_ts TIMESTAMP, 
+    event_data TEXT, 
+PRIMARY KEY ((event_id),event_ts));
+
+CREATE TABLE IF NOT EXISTS “kc_events” (
+    event_id1 TEXT, 
+    event_id2 TEXT, 
+    event_ts TIMEUUID, 
+    event_data1 TEXT, 
+    event_data2 TEXT, 
+PRIMARY KEY ((event_id1, event_id2)));
+
+
+INSERT INTO pack_events (event_id, event_ts, event_data) 
+VALUES (‘500’, ‘2018–01–22T20:28:50.869Z’, ‘{“foo”:”bar”}’);
+
+INSERT INTO pack_events (event_id, event_ts, event_data) 
+VALUES (‘501’, ‘2018–05–08T20:28:50.869Z’, ‘{“foo”:”bar”}’);
+
+INSERT INTO pack_events (event_id, event_ts, event_data) 
+VALUES (‘502’, ‘2018–05–09T20:28:50.869Z’, ‘{“foo”:”bar”}’);

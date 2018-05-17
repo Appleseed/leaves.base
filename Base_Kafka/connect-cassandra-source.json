@@ -1,0 +1,16 @@
+{ 
+  "name" : "packs", 
+  "config" : { 
+    "tasks.max" : "1", 
+    "connector.class" : "com.datamountaineer.streamreactor.connect.cassandra.source.CassandraSourceConnector", 
+    "connect.cassandra.contact.points" : "cassandra",    
+    "connect.cassandra.username" : "cassandra",   
+    "connect.cassandra.password" : "cassandra",
+    "connect.cassandra.consistency.level" : "LOCAL_ONE",
+    "connect.cassandra.key.space" : "blog",
+    "connect.cassandra.import.mode" : "incremental", 
+    "connect.cassandra.kcql" : "INSERT INTO test_topic SELECT event_data, event_ts FROM pack_events IGNORE event_ts PK event_ts WITHUNWRAP INCREMENTALMODE=TIMESTAMP", 
+    "connect.cassandra.initial.offset" : "2018-01-22 00:00:00.0000000Z", 
+    "connect.cassandra.import.poll.interval" : 1000 
+  } 
+}
