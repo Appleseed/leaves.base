@@ -59,7 +59,7 @@ def ingest_solr(doc):
                id_val = value
    print('Url ', post_docs['url'], ' Title ', post_docs['title'])
    try:
-        res = requests.post(POST_EP + '/update?commit=true', json="[" + json.dumps(post_docs) + "]")
+        res = requests.post(POST_EP + '/update/json/docs?commit=true', json=post_docs)
    except Exception as e:
        print("Error ", str(e))
 

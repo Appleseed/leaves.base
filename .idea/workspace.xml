@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8fcdb88e-471d-407e-a6b0-90dac3a34483" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Base_Awesome_Collect/Subscribe.py" afterPath="$PROJECT_DIR$/Base_Awesome_Collect/Subscribe.py" />
-      <change beforePath="$PROJECT_DIR$/Base_Awesome_Collect/wallabag_param" afterPath="$PROJECT_DIR$/Base_Awesome_Collect/wallabag_param" />
-      <change beforePath="$PROJECT_DIR$/Base_Awesome_Index_Solr/process_solr.py" afterPath="$PROJECT_DIR$/Base_Awesome_Index_Solr/process_solr.py" />
+      <change beforePath="$PROJECT_DIR$/base_wallabag_solr/RedisToSolr/process_solr.py" afterPath="$PROJECT_DIR$/base_wallabag_solr/RedisToSolr/process_solr.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,14 +63,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="process_solr.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="process_solr.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/process_solr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="867">
+              <caret line="57" column="50" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="50" />
               <folding>
                 <element signature="e#50#69#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="process_solr.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/base_wallabag_solr/RedisToSolr/process_solr.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="61" column="56" lean-forward="false" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,7 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/persist_in_wallabag.py" />
         <option value="$PROJECT_DIR$/loadToWallabag.py" />
         <option value="$PROJECT_DIR$/t2.py" />
         <option value="$PROJECT_DIR$/t3.py" />
@@ -177,6 +184,7 @@
         <option value="$PROJECT_DIR$/Base_Awesome_Collect/IndexAllWallabagDoc.py" />
         <option value="$PROJECT_DIR$/Base_Awesome_Collect/Subscribe.py" />
         <option value="$PROJECT_DIR$/Base_Awesome_Index_Solr/process_solr.py" />
+        <option value="$PROJECT_DIR$/base_wallabag_solr/RedisToSolr/process_solr.py" />
       </list>
     </option>
   </component>
@@ -228,27 +236,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="awesome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="awesome-transform" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="awesome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="awesome-transform" type="462c0819:PsiDirectoryNode" />
-              <item name="Base_Awesome_Collect" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="awesome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="awesome-transform" type="462c0819:PsiDirectoryNode" />
-              <item name="Base_Awesome_Index_Solr" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Default">
           <expand>
@@ -265,6 +252,28 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="awesome-transform" type="cbb8eebc:String" user="awesome-transform" />
               <item name="redis_sub" type="cbb8eebc:String" user="redis_sub" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="awesome" type="b2602c69:ProjectViewProjectNode" />
+              <item name="awesome-transform" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="awesome" type="b2602c69:ProjectViewProjectNode" />
+              <item name="awesome-transform" type="462c0819:PsiDirectoryNode" />
+              <item name="base_wallabag_solr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="awesome" type="b2602c69:ProjectViewProjectNode" />
+              <item name="awesome-transform" type="462c0819:PsiDirectoryNode" />
+              <item name="base_wallabag_solr" type="462c0819:PsiDirectoryNode" />
+              <item name="RedisToSolr" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -581,7 +590,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2064865" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42635658" sideWeight="0.21908316" order="7" side_tool="true" content_ui="tabs" />
@@ -589,10 +597,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.4968017" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16257995" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16577825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864866" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45081082" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
@@ -602,6 +609,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864866" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -670,7 +678,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/solr-conf/pre-conf/schema.xml" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/init.py" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/config.ini" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/processor/app/field_config.py" />
@@ -865,13 +872,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wallabag_param">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/wallabag_param" />
     <entry file="file://$PROJECT_DIR$/PublishToSolr_cp.py" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/wallabag_param">
       <provider selected="true" editor-type-id="text-editor">
@@ -894,27 +895,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/IndexAllWallabagDoc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/IndexAllWallabagDoc.py" />
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Collect/PublishToSolr.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -928,13 +913,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Base_Awesome_Index_Solr/process_solr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="867">
+          <caret line="57" column="50" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="50" />
           <folding>
             <element signature="e#50#69#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base_wallabag_solr/RedisToSolr/process_solr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="61" column="56" lean-forward="false" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
