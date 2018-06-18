@@ -41,7 +41,6 @@ services:
     image: jagannathbilgi/awesome-transform
     environment:
       - REDIS_IP={{redis|container_ip}}
-
     volumes:
       - c:\Users\DELL\Docker_proj\wallabag\awesome_share:/var/awesome
 
@@ -52,20 +51,19 @@ services:
     image: jagannathbilgi/redis_aggregate
     environment:
       - REDIS_IP={{redis|container_ip}}
-
     volumes:
       - c:\Users\DELL\Docker_proj\wallabag\awesome_share:/var/awesome
 
   cassandra:
     image: cassandra:latest
-    volumes:
-      - c:\Users\DELL\Docker_proj\wallabag\cassandra-persistence:/var/lib/cassandra:rw
-
 
   redis_collect:
     image: jagannathbilgi/redis_collect_new
     environment:
       - CASS_IP={{cassandra:9042}}
+
+    ports:
+      - 5001:5001
 
   redis_solr:
     image: jagannathbilgi/redis_solr

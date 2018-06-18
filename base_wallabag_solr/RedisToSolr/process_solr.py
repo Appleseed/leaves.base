@@ -1,6 +1,5 @@
 #Jagannath Bilgi <jsbilgi@yahoo.com>
 
-import json
 import configparser
 import datetime
 import requests
@@ -21,6 +20,7 @@ POST_EP = config['DEFAULT']['post_ep']
 """
 ingest_solr process is created to index document retrived from wallabag api.
 new column content_text is created to hold only readable text from sites.
+
 """
 def ingest_solr(doc):
    post_docs = {}
@@ -79,9 +79,7 @@ def main():
             for m in sub.listen():
                 if m['data'] != 1:
                     ingest_solr(eval("dict({})".format(m['data'])))
-
     except Exception as e:
         print("Error ", str(e))
-
 if __name__ == '__main__':
     main()

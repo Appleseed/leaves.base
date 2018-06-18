@@ -1,9 +1,12 @@
+import sys
+import time
+import os
 import asyncio
 import json
 
 import aiohttp
 from wallabag_api.wallabag import Wallabag
-import PublishToSolr
+import RedisQueue
 
 param = json
 
@@ -17,6 +20,7 @@ extension = ""
 title = ""
 url = ""
 tags = ""
+option = sys.argv[1]
 
 async def wallabagAPI(loop):
     params = {'username': username,
@@ -25,32 +29,94 @@ async def wallabagAPI(loop):
               'client_secret': client_secret,
               'extension': extension}
 
+    awesome_solr_queue = 'awesome_solr'
+    awesome_solr_missing_id = 'awesome_solr_missing_id'
+
     #get wallabag token
-    token = await Wallabag.get_token(host=my_host, **params)
+    try:
+       walla_key = os.environ['WALLA_KEY']
+    except Exception as e:
+       print("Using credentials from param file")
+       walla_key = None
 
-    def pr_get_entry():
-        data = wall.get_entries()
-        # data = wall.get_entry(entry=1)
-        return data
+    if not walla_key:
+       token = await Wallabag.get_token(host=my_host, **params)
+    else:
+       print("Environment key ", walla_key)
+       token = walla_key
 
-    async def get_entry():
-        data = await pr_get_entry()
-        #try:
-        #    PublishToSolr.publishToSolr(data)
-        #except Exception as e:
-        #    print('Error while queing ', str(e))
+    def pr_get_entries(page=None):
+       data = wall.get_entries(page=page)
+       return data
+
+    def pr_get_entry(id):
+       data = wall.get_entry(entry=id)
+       return data
+
+    def check_missing_id():
+        time.sleep(120)
+        with open("wallabag_id_list", "r") as f:
+             for line in f:
+                 RedisQueue.pushToQueue(awesome_solr_missing_id, line)
+
+    async def get_entry(id):
+        data = await pr_get_entry(id)
+        RedisQueue.pushToQueue(awesome_solr_queue,data)
+    async def get_entry(id):
+        data = await pr_get_entry(id)
+        RedisQueue.pushToQueue(awesome_solr_queue,data)
+
+    async def get_entries():
+        data = await pr_get_entries()
+        for k, v in data.items():
+             if k == 'pages':
+                total_pages = v
+             if k == '_embedded':
+                 for k1, v1 in (v.items()):
+                     id_str = None
+                     for x in range(len(v1)):
+                         """
+                         queue document to redis
+                         """
+                         try:
+                             print("Sending message " + str(v1[x]["id"]))
+                             for k2, v2 in v1[x].items():
+                                 if k2 == 'tags':
+                                    print("tags ", v2)
+                             if not id_str:
+                                id_str = str(v1[x]["id"])
+                             else:
+                                id_str = id_str + ',' + str(v1[x]["id"])
+                                RedisQueue.pushToQueue(awesome_solr_queue, v1[x])
+                         except Exception as e:
+                             print('Error while queing ', str(e))
+                 with open("wallabag_id_list","a") as f:
+                      f.write(id_str + '\n')
+                 for x in range(2,total_pages):
+                     await get_page(x)
+                     print("Ingected entries from page ", x)
+                 check_missing_id()
+    async def get_page(page):
+        data = await pr_get_entries(page)
         for k, v in data.items():
              if k == '_embedded':
                  for k1, v1 in (v.items()):
+                     id_str = None
                      for x in range(len(v1)):
                          """
-                         move to redis queue for solr ingestion
+                         queue document to redis
                          """
                          try:
-                             PublishToSolr.publishToSolr(v1[x])
+                             print("Sending message " + str(v1[x]["id"]))
+                             if not id_str:
+                                id_str = str(v1[x]["id"])
+                             else:
+                                id_str = id_str + ',' + str(v1[x]["id"])
+                                RedisQueue.pushToQueue(awesome_solr_queue, v1[x])
                          except Exception as e:
                              print('Error while queing ', str(e))
-
+                 with open("wallabag_id_list","a") as f:
+                      f.write(id_str + '\n')
     async with aiohttp.ClientSession(loop=loop) as session:
         wall = Wallabag(host=my_host,
                         client_secret=params.get('client_secret'),
@@ -58,8 +124,20 @@ async def wallabagAPI(loop):
                         token=token,
                         extension=params['extension'],
                         aio_sess=session)
-        await get_entry()
+        if option == '1':
+           await get_entries()
+        else:
+           if option == '2':
+              file_name = "missing_ids"
+           else:
+              file_name = "Wallabag_Arch_id_list"
 
+           with open(file_name, "r") as f:
+                for line in f:
+                    id_list = line[1:].rstrip().split(",")
+                    for id in (range(len(id_list))):
+                        print("id ", id_list[id])
+                        await get_entry(id_list[id])
 def main():
     """
     Creates event loop that is required for wallabag api. Wallabag token is generated using login parameter saved in walla_param json file
@@ -86,4 +164,5 @@ def main():
     loop.run_until_complete(wallabagAPI(loop))
 
 if __name__ == '__main__':
+    print("option selected ", option)
     main()

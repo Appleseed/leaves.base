@@ -13,7 +13,7 @@ from cassandra.cqlengine.management import sync_table
 from wallabag_api.wallabag import Wallabag
 from CassStruct.cassStruct import Entry, Tags, Published_by
 
-import PublishToSolr
+import RedisQueue
 
 """
 Needs to meet all prerequisite of wallabag program
@@ -53,6 +53,7 @@ async def wallabagAPI(loop):
               'client_secret': client_secret,
               'extension': extension}
 
+    awesome_solr_queue = 'awesome_solr'
     # get wallabag token
 
     token = await Wallabag.get_token(host=my_host, **params)
@@ -72,7 +73,7 @@ async def wallabagAPI(loop):
 
         """
         try:
-            PublishToSolr.publishtoSolr(data)
+            RedisQueue.pushToQueue(awesome_solr_queue, data)
         except Exception as e:
             print('Error while queing ', str(e))
 

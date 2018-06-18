@@ -4,7 +4,8 @@
     <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredIdentifiers">
         <list>
-          <option value="redis_sub.sub.CassStruct" />
+          <option value="RedisQueue" />
+          <option value="Base_Awesome_Collect.Subscribe.CassStruct" />
         </list>
       </option>
     </inspection_tool>

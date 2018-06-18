@@ -22,8 +22,6 @@ ingest_solr process is created index document retrived from wallabag api.
 new column content_text is created to hold only readable text from sites.
 
 """
-
-
 def ingest_solr(doc):
     post_docs = {}
     for key, value in doc.items():
@@ -32,8 +30,10 @@ def ingest_solr(doc):
                 content_text = bs4_extract_body.text_from_html(value)
             except:
                 content_text = None
-            post_docs[key] = value
-            post_docs['content_text'] = content_text
+            if value != None:
+                post_docs[key] = value
+            if content_text != None:
+                post_docs['content_text'] = content_text
         elif key == 'tags':
             tags = []
             slugs = []
@@ -43,14 +43,18 @@ def ingest_solr(doc):
                         tags.append(value1)
                     elif key1 == "slug":
                         slugs.append(value1)
-            post_docs[key] = tags
-            post_docs["slugs"] = slugs
+            if tags != None :
+               post_docs[key] = tags
+            if slugs != "None" :
+              post_docs["slugs"] = slugs
         elif key == "_links":
             for key1, value1 in value.items():
                 for key2, value2 in value1.items():
-                    post_docs[key] = value2
+                   if value2 != None :
+                      post_docs[key] = value2
         else:
-            post_docs[key] = value
+            if value != None:
+                post_docs[key] = value
             if key == "id":
                 id_val = value
     print('Url ', post_docs['url'], ' Title ', post_docs['title'])
@@ -59,12 +63,9 @@ def ingest_solr(doc):
     except Exception as e:
         print("Error ", str(e))
 
-
 """
 Ingesting to solr
 """
-
-
 def main():
     try:
         """
@@ -78,10 +79,7 @@ def main():
             for m in sub.listen():
                 if m['data'] != 1:
                     ingest_solr(eval("dict({})".format(m['data'])))
-
     except Exception as e:
         print("Error ", str(e))
-
-
 if __name__ == '__main__':
     main()
