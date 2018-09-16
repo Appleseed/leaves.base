@@ -1,0 +1,2 @@
+docker build -t base_awesome_collect .
+docker tag base_awesome_collect jagannathbilgi/base_awesome_collect

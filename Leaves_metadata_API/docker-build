@@ -1,0 +1,2 @@
+docker build -t leaves_api .
+docker tag leaves_api jagannathbilgi/leaves_api

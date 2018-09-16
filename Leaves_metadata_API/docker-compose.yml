@@ -1,0 +1,10 @@
+#######################################
+#  Appleseed.Search.App 
+#  Currently just a test app 
+#######################################
+version: '2'
+services: 
+ leaves_api:
+  image: leaves_api
+  ports:
+    - "8081:8081"

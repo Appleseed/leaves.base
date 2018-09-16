@@ -5,7 +5,7 @@ import time
 
 """
 
-This module receives document as input and queue it to different queues
+This module receives document as input and queue it to different queues ("Awesome" queue)
 
 """
 

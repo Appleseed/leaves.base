@@ -1,10 +1,54 @@
-#######################################
-#  Appleseed.Leaves.App
-#######################################
-version: '2.1'
+version: '3'
 services:
+  reverseproxy:
+    image: reverseproxy
+    ports:
+      - 80:80
+    restart: always
+
+  app:
+    image: appleseed/leaves
+    depends_on:
+      - reverseproxy
+    ports:
+      - 81:9000
+    environment:
+      - GOOGLE_ANALYTICS_CODE=True
+
+  topic:
+    image: appleseed/leaves.topic
+    depends_on:
+      - reverseproxy
+    ports:
+      - 82:3000
+
+  search:
+    image: appleseed/leaves.search
+    depends_on:
+      - reverseproxy
+    ports:
+      - 8080:8080
+    volumes:
+      - ./awesome_share:/var/awesome
+
+  leaves_ui_api:
+    image: jagannathbilgi/leaves_ui_api
+    depends_on:
+      - reverseproxy
+    environment:
+      - LEAVES_API_PORT=5500
+    ports:
+      - 5500:5500
+
+  leaves_api:
+    image: jagannathbilgi/leaves_api
+    ports:
+      - 8081:8081
+
   wallabag:
     image: wallabag/wallabag
+    depends_on:
+      - reverseproxy
     environment:
       - MYSQL_ROOT_PASSWORD=wallaroot
       - SYMFONY__ENV__DATABASE_DRIVER=pdo_mysql
@@ -17,72 +61,71 @@ services:
       - SYMFONY__ENV__MAILER_USER=~
       - SYMFONY__ENV__MAILER_PASSWORD=~
       - SYMFONY__ENV__FROM_EMAIL=rahul.singh@anant.us
-      - SYMFONY__ENV__DOMAIN_NAME=http://192.168.99.100
+      - SYMFONY__ENV__DOMAIN_NAME=http://206.189.143.212:100
       - SYMFONY__ENV__DATABASE_CHARSET=utf8mb4
     ports:
-      - 80:80
+      - 100:80
     volumes:
-      - //C/Users/DELL/Docker_proj/wallabag/wallabag_images:/var/www/wallabag/web/assets/images
+      - ./wallabag_stg/wallabag_images:/var/www/wallabag/web/assets/images
 
   db:
     image: mariadb
-    command: 
+    command:
       --character_set_client=utf8 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --character-set-client-handshake=FALSE
-
     environment:
       - MYSQL_ROOT_PASSWORD=wallaroot
     volumes:
-      - //C/Users/DELL/Docker_proj/wallabag/wallabag_mysql:/var/lib/mysql
+      - ./wallabag_stg/wallabag_mysql:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - reverseproxy
+    links:
+      - db:db
+    ports:
+      - 83:80
 
   redis:
     image: redis:alpine
 
   awesome_transform:
-    image: jagannathbilgi/awesome-transform
+    image: jagannathbilgi/base_awesome_transform
     environment:
       - REDIS_IP={{redis|container_ip}}
     volumes:
-      - c:\Users\DELL\Docker_proj\wallabag\awesome_share:/var/awesome
-
+      - ./awesome_share:/var/awesome
     ports:
       - 5000:5000
 
-  redis_aggregate:
-    image: jagannathbilgi/redis_aggregate
+  awesome_aggregate:
+    image: jagannathbilgi/base_awesome_aggregate
     environment:
       - REDIS_IP={{redis|container_ip}}
     volumes:
-      - c:\Users\DELL\Docker_proj\wallabag\awesome_share:/var/awesome
+      - ./awesome_share:/var/awesome
 
-  cassandra:
-    image: cassandra:latest
-
-  redis_collect:
-    image: jagannathbilgi/redis_collect_new
+  awesome_collect:
+    image: jagannathbilgi/base_awesome_collect
     environment:
-      - CASS_IP={{cassandra:9042}}
-
+      - LEAVES_API_URL=http://wallabag
+      - LEAVES_WATSON_USER=c5c2dd2d-b29b-4268-9748-dfd19687e5c7
+      - LEAVES_WATSON_KEY=PotmceYly2BB
+    depends_on:
+      - wallabag
     ports:
       - 5001:5001
 
-  redis_solr:
-    image: jagannathbilgi/redis_solr
+  awesome_index:
+    image: jagannathbilgi/base_awesome_index_solr
+    environment:
+      - LEAVES_SOLR_URL=https://ss346483-us-east-1-aws.searchstax.com/solr/leaves_anant_stage
+      - LEAVES_API_URL=http://206.189.143.212:8081
+    depends_on:
+      - redis
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    links:
-      - db:db
-    ports:
-      - 83:80
-      
-  solr:
-     image: solr
-     ports: 
-       - "8983:8983"
-     volumes: 
-       - ./mycores:/opt/solr/server/solr/mycores
-       - ./myconf:/opt/solr/server/solr/configsets/myconf
-     entrypoint:
-       - solr-precreate
-       - mycore2
-       - /opt/solr/server/solr/configsets/myconf
+  watchtower:
+    image: v2tec/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30
