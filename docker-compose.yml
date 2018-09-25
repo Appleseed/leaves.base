@@ -1,11 +1,10 @@
-version: '3'
+version: '2'
 services:
   reverseproxy:
     image: reverseproxy
     ports:
       - 80:80
     restart: always
-
   app:
     image: appleseed/leaves
     depends_on:
@@ -14,14 +13,12 @@ services:
       - 81:9000
     environment:
       - GOOGLE_ANALYTICS_CODE=True
-
   topic:
     image: appleseed/leaves.topic
     depends_on:
       - reverseproxy
     ports:
       - 82:3000
-
   search:
     image: appleseed/leaves.search
     depends_on:
@@ -30,7 +27,6 @@ services:
       - 8080:8080
     volumes:
       - ./awesome_share:/var/awesome
-
   leaves_ui_api:
     image: jagannathbilgi/leaves_ui_api
     depends_on:
@@ -39,12 +35,10 @@ services:
       - LEAVES_API_PORT=5500
     ports:
       - 5500:5500
-
   leaves_api:
     image: jagannathbilgi/leaves_api
     ports:
       - 8081:8081
-
   wallabag:
     image: wallabag/wallabag
     depends_on:
@@ -67,7 +61,6 @@ services:
       - 100:80
     volumes:
       - ./wallabag_stg/wallabag_images:/var/www/wallabag/web/assets/images
-
   db:
     image: mariadb
     command:
@@ -76,7 +69,6 @@ services:
       - MYSQL_ROOT_PASSWORD=wallaroot
     volumes:
       - ./wallabag_stg/wallabag_mysql:/var/lib/mysql
-
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     depends_on:
@@ -85,10 +77,8 @@ services:
       - db:db
     ports:
       - 83:80
-
   redis:
     image: redis:alpine
-
   awesome_transform:
     image: jagannathbilgi/base_awesome_transform
     environment:
@@ -97,14 +87,12 @@ services:
       - ./awesome_share:/var/awesome
     ports:
       - 5000:5000
-
   awesome_aggregate:
     image: jagannathbilgi/base_awesome_aggregate
     environment:
       - REDIS_IP={{redis|container_ip}}
     volumes:
       - ./awesome_share:/var/awesome
-
   awesome_collect:
     image: jagannathbilgi/base_awesome_collect
     environment:
@@ -115,15 +103,14 @@ services:
       - wallabag
     ports:
       - 5001:5001
-
   awesome_index:
     image: jagannathbilgi/base_awesome_index_solr
     environment:
       - LEAVES_SOLR_URL=https://ss346483-us-east-1-aws.searchstax.com/solr/leaves_anant_stage
-      - LEAVES_API_URL=http://206.189.143.212:8081
+      - LEAVES_API_URL=http://leaves_api:8081
     depends_on:
       - redis
-
+      - leaves_api
   watchtower:
     image: v2tec/watchtower
     volumes:
