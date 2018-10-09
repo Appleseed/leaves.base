@@ -55,7 +55,7 @@ services:
       - SYMFONY__ENV__MAILER_USER=~
       - SYMFONY__ENV__MAILER_PASSWORD=~
       - SYMFONY__ENV__FROM_EMAIL=rahul.singh@anant.us
-      - SYMFONY__ENV__DOMAIN_NAME=http://206.189.143.212:100
+      - SYMFONY__ENV__DOMAIN_NAME=http://stage.leaves.anant.us:100
       - SYMFONY__ENV__DATABASE_CHARSET=utf8mb4
     ports:
       - 100:80

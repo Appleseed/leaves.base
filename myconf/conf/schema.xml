@@ -411,34 +411,34 @@
       Apache Solr Search Integration
         The format used is $document->id = $site_hash . '/' . $entity_type . '/' . $entity->id;
     -->
-  <field name="_links" type="text_general"/>
+  <field name="_links" type="text_general" multiValued="true"/>
   <field name="_root_" type="string" docValues="false" indexed="true" stored="false"/>
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="_version_" type="plong" indexed="false" stored="false"/>
-  <field name="content" type="text_general" indexed="false" stored="true"/>
-  <field name="content_text" type="text_general" indexed="true" stored="true"/>
-  <field name="created_at" type="pdates"/>
-  <field name="domain_name" type="text_general"/>
-  <field name="http_status" type="plongs"/>
+  <field name="content" type="text_general" indexed="false" stored="true" multiValued="false"/>
+  <field name="content_text" type="text_general" indexed="true" stored="true" multiValued="false"/>
+  <field name="created_at" type="pdates" multiValued="false"/>
+  <field name="domain_name" type="text_general" multiValued="false"/>
+  <field name="http_status" type="plongs" multiValued="false"/>
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
-  <field name="uid" type="text_general"/>
-  <field name="is_archived" type="plongs"/>
-  <field name="is_public" type="booleans"/>
-  <field name="is_starred" type="plongs"/>
-  <field name="language" type="text_general"/>
-  <field name="mimetype" type="text_general"/>
-  <field name="preview_picture" type="text_general"/>
-  <field name="published_at" type="pdates"/>
-  <field name="published_by" type="text_general"/>
-  <field name="reading_time" type="plongs"/>
+  <field name="uid" type="text_general" multiValued="false"/>
+  <field name="is_archived" type="plongs" multiValued="false"/>
+  <field name="is_public" type="booleans" multiValued="false"/>
+  <field name="is_starred" type="plongs" multiValued="false"/>
+  <field name="language" type="text_general" multiValued="false"/>
+  <field name="mimetype" type="text_general" multiValued="false"/>
+  <field name="preview_picture" type="text_general" multiValued="false"/>
+  <field name="published_at" type="pdates" multiValued="false"/>
+  <field name="published_by" type="text_general" multiValued="false"/>
+  <field name="reading_time" type="plongs" multiValued="false"/>
   <field name="tags" type="text_general" multiValued="true" indexed="true"/>
   <field name="slugs" type="text_general" multiValued="true" indexed="true"/>
-  <field name="title" type="text_general"/>
-  <field name="updated_at" type="pdates"/>
-  <field name="url" type="text_general"/>
-  <field name="user_email" type="text_general"/>
-  <field name="user_id" type="plongs"/>
-  <field name="user_name" type="text_general"/>
+  <field name="title" type="text_general" multiValued="false"/>
+  <field name="updated_at" type="pdates" multiValued="false"/>
+  <field name="url" type="text_general" multiValued="false"/>
+  <field name="user_email" type="text_general" multiValued="false"/>
+  <field name="user_id" type="plongs" multiValued="false"/>
+  <field name="user_name" type="text_general" multiValued="false"/>
   <field name="keywords" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
   <field name="content_metadata_full" type="text" multiValued="false" indexed="true" required="false" stored="true"/>
   <field name="content_metadata_raw" type="text" multiValued="false" indexed="true" required="false" stored="true"/>

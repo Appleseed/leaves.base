@@ -67,9 +67,10 @@ async def wallabagAPI(loop):
         if title.strip() != "" :
             data = wall.post_entries(url=url, title=title, tags=tags, archive=archive, starred=starred)
         else:
-            with open("d_temp", "w") as f:
-                f.write("url " + url + "\n")
-            data = wall.post_entries(url=url)
+            if tags:
+                data = wall.post_entries(url=url, tags=tags, archive=archive, starred=starred);
+            else:
+                data = wall.post_entries(url=url, archive=archive, starred=starred);
         return data
 
     async def create_entry(title, url, tags):
@@ -170,18 +171,33 @@ def callback():
             url = ''
             tags = ''
             if m['data'] != 1:
-                if m['data'][1:1] == "" and m['data'][-1:-1] == "" :
-                    url = m['data'][1:-1]
+                if type(m['data']) == str and m['data'].strip() != None:
+                    arg_list = m['data'].split(", ")
+                    i = 0
+                    for val in arg_list:
+                        if (i == 0) :
+                            if val != 'dummy':
+                                title = val
+                        if (i == 1) :
+                            if val != 'dummy':
+                                url = val
+                        if (i == 2) :
+                            if val != 'dummy':
+                                tags = val
+                        i = i + 1
                 else:
                     csv_str = csv.reader(m['data'][1:-1], quotechar="'", delimiter=",")
                     for val in csv_str:
                         if val[0].strip():
                             if not title.strip():
-                                title = val[0]
+                                if val[0] != 'dummy':
+                                    title = val[0]
                             elif not url.strip():
-                                url = val[0]
+                                if val[0] != 'dummy':
+                                    url = val[0]
                             elif not tags.strip():
-                                tags = val[0]
+                                if val[0] != 'dummy':
+                                    tags = val[0]
                 callWallabag(title, url, tags)
 
 def main():
