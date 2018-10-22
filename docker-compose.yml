@@ -40,7 +40,7 @@ services:
     ports:
       - 8081:8081
   wallabag:
-    image: wallabag/wallabag
+    image: wallabag/wallabag:2.3.3
     depends_on:
       - reverseproxy
     environment:
