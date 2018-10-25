@@ -1,0 +1,2 @@
+docker build -t base_awesome_aggregate .
+docker tag base_awesome_aggregate jagannathbilgi/base_awesome_aggregate
