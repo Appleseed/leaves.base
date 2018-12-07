@@ -1,0 +1,14 @@
+GET http://localhost:6500/param?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-30T105014.404.html
+
+###
+
+GET http://localhost6500/param?id=1
+Accept: */*
+Cache-Control: no-cache
+
+###
+

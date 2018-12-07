@@ -1,0 +1,2 @@
+docker build -t leaves_api_cas_qry .
+#docker tag leaves_api_cas_qry jagannathbilgi/leaves_api_cas_qry
