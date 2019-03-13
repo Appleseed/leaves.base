@@ -1,2 +1,1 @@
 docker build -t base_awesome_transform .
-docker tag base_awesome_transform jagannathbilgi/base_awesome_transform

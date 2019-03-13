@@ -11,6 +11,7 @@ services:
       - reverseproxy
     ports:
       - 81:9000
+    restart: always
     environment:
       - GOOGLE_ANALYTICS_CODE=True
   topic:
@@ -19,6 +20,7 @@ services:
       - reverseproxy
     ports:
       - 82:3000
+    restart: always
   search:
     image: appleseed/leaves.search
     depends_on:
@@ -28,25 +30,30 @@ services:
     volumes:
       - ./awesome_share:/var/awesome
   leaves_ui_api:
-    image: jagannathbilgi/leaves_ui_api
+    image: leaves_ui_api
     depends_on:
       - reverseproxy
     environment:
       - LEAVES_API_PORT=5500
+      - DATABASE_USER=wallabag
+      - DATABASE_PASSWORD=wallapass
+      - DATABASE_NAME=wallabag
+      - DATABASE_HOST=db
     ports:
       - 5500:5500
-  leaves_api_cas_qry:
-    image: leaves_api_cas_qry
-    depends_on:
-      - cassandra
-      - reverseproxy
-    environment:
-      - LEAVES_API_CAS_HOST=cassandra
-      - LEAVES_API_CAS_PORT=6500
-    ports:
-      - 6500:6500
+  #leaves_api_cas_qry:
+  #  image: leaves_api_cas_qry
+  #  depends_on:
+      #- cassandra
+  #    - reverseproxy
+  #  environment:
+  #    - LEAVES_API_CAS_HOST=cassandra
+  #    - LEAVES_SOLR_URL=https://ss346483-us-east-1-aws.searchstax.com/solr/leaves_anant_stage
+  #    - LEAVES_API_CAS_PORT=6500
+  #  ports:
+  #    - 6500:6500
   leaves_api:
-    image: jagannathbilgi/leaves_api
+    image: leaves_api
     ports:
       - 9081:9081
   thumbor:
@@ -96,7 +103,7 @@ services:
   redis:
     image: redis:alpine
   awesome_transform:
-    image: jagannathbilgi/base_awesome_transform
+    image: base_awesome_transform
     environment:
       - REDIS_IP={{redis|container_ip}}
     volumes:
@@ -104,13 +111,13 @@ services:
     ports:
       - 5000:5000
   awesome_aggregate:
-    image: jagannathbilgi/base_awesome_aggregate
+    image: base_awesome_aggregate
     environment:
       - REDIS_IP={{redis|container_ip}}
     volumes:
       - ./awesome_share:/var/awesome
   awesome_collect:
-    image: jagannathbilgi/base_awesome_collect
+    image: base_awesome_collect
     environment:
       - LEAVES_API_URL=http://wallabag
       - LEAVES_WATSON_USER=c5c2dd2d-b29b-4268-9748-dfd19687e5c7
@@ -120,7 +127,7 @@ services:
     ports:
       - 5001:5001
   awesome_index:
-    image: jagannathbilgi/base_awesome_index_solr
+    image: base_awesome_index_solr
     environment:
       - LEAVES_SOLR_URL=https://ss346483-us-east-1-aws.searchstax.com/solr/leaves_anant_stage
       - LEAVES_API_URL=http://leaves_api:8081
@@ -132,11 +139,11 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --interval 30
-  cassandra:
-    image: cassandra:latest
-    ports:
-      - "9042:9042"
-    container_name: cassandra
-    volumes:
-      - ./cassandra/data:/var/lib/cassandra
+#  cassandra:
+#    image: cassandra:latest
+#    ports:
+#      - "9042:9042"
+#    container_name: cassandra
+#    volumes:
+#      - ./cassandra/data:/var/lib/cassandra
 
